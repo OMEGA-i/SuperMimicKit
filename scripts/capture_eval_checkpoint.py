@@ -1,4 +1,4 @@
-"""Preserve exact evaluation actor weights without changing a running trainer."""
+"""Preserve exact network weights without changing a running trainer."""
 import argparse
 import json
 import time
@@ -12,7 +12,9 @@ def main():
     p.add_argument('--runs', nargs='+', type=Path, required=True)
     p.add_argument('--iteration', type=int, default=20000)
     p.add_argument('--every', type=int, default=0, help='Continuously preserve multiples of this interval')
+    p.add_argument('--include-world', action='store_true', help='Archive paired policy/world weights as demo_<iteration>.pt')
     a = p.parse_args()
+    prefix = 'demo' if a.include_world else 'eval'
     if a.every < 0:
         p.error('--every must be nonnegative')
     torch.set_num_threads(2)
@@ -20,7 +22,7 @@ def main():
     seen = {}
     while pending:
         for run in sorted(pending):
-            if not a.every and (run / f'eval_{a.iteration}.pt').exists():
+            if not a.every and (run / f'{prefix}_{a.iteration}.pt').exists():
                 pending.remove(run)
                 continue
             path = run / 'last.pt'
@@ -38,8 +40,8 @@ def main():
             if not a.every and n > a.iteration:
                 raise RuntimeError(f'{run}: missed {a.iteration}, current {n}')
             if (a.every and n % a.every == 0) or (not a.every and n == a.iteration):
-                out = run / f'eval_{n}.pt'
-                if save_evaluation_checkpoint(d, out):
+                out = run / f'{prefix}_{n}.pt'
+                if save_evaluation_checkpoint(d, out, include_world=a.include_world):
                     print(json.dumps({'saved': str(out), 'iterations': n}), flush=True)
                 if not a.every:
                     pending.remove(run)

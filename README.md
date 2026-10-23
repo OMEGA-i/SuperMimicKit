@@ -124,14 +124,16 @@ different statistic. See [metric limitations](docs/reproduction_scope.md).
 Set `project`, `workspace`, `experiment_name` and `experiment_id` in your local
 configuration, with credentials supplied locally. No account credentials are
 included. The checkpoint capture helper can retain evaluation weights every
-500 updates and archival weights every 10k updates.
+500 updates and paired policy + world-model archives (`demo_<iteration>.pt`) every 10k updates.
+For an already-running trainer, run the capture helper with `--every 10000
+--include-world`; it uses CPU mmap and does not require a training restart.
 
 ## Checkpoint exports
 
 Complete demo bundles require policy and world-model weights from the same
 checkpoint, plus compatible assets, metadata and motions. Policy-only exports
-cannot replace a full demo bundle. Release artifacts are being prepared; no
-complete pretrained demo bundle is currently published.
+cannot replace a full demo bundle. A complete 100k demo release is planned once all three embodiments reach
+100,000 iterations; no complete pretrained demo bundle is currently published.
 
 Use `scripts/capture_demo_checkpoint.py` to preserve both networks from a full
 training checkpoint using CPU only, without copying replay or optimizer state.

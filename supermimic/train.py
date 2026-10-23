@@ -427,12 +427,13 @@ def run(args):
                     "learner_version": VERSION,
                     "training_contract": contract,
                     "actor": learner.actor.state_dict(),
+                    "world": learner.world.state_dict(),
                     "iteration": iteration,
                     "config": cfg,
                     "joint_names": motions.names[0],
                     "body_names": motions.names[1],
                     "args": vars(args),
-                }, args.output / f"eval_{iteration + 1}.pt")
+                }, args.output / f"demo_{iteration + 1}.pt", include_world=True)
             if (
                 iteration + 1
             ) % args.checkpoint_every == 0 or iteration + 1 == args.iterations:
