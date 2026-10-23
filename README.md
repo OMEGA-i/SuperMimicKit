@@ -126,12 +126,32 @@ configuration, with credentials supplied locally. No account credentials are
 included. The checkpoint capture helper can retain evaluation weights every
 500 updates and archival weights every 10k updates.
 
+## Released policies
+
+The [50k policy release](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/policy-50k)
+provides FP32 ONNX policies from exact 50,000-iteration snapshots for G1 and A3.
+H2 is pending its restarted training reaching 50k. Each archive contains
+`policy.onnx`, normalization/control metadata, configuration, synthetic inference
+fixtures and numerical validation results. These are **policy-only** artifacts;
+world models, source PyTorch checkpoints, robot meshes and motion data are not
+included. They are not complete browser-demo asset directories.
+
+To export an exact snapshot yourself:
+
+```bash
+CUDA_VISIBLE_DEVICES='' .venv/bin/python -m scripts.export_policy_release \
+  --checkpoint outputs/my_run/eval_50000.pt --robot g1 --iterations 50000 \
+  --output outputs/g1-policy-50k
+node scripts/check_policy_release.mjs outputs/g1-policy-50k
+```
+
 ## Browser demo
 
 [Demo setup](web/demo/README.md). Policy and world-model networks use ONNX Runtime
 Web on WebGPU; MuJoCo physics uses WASM. WebGPU needs a secure browser context
 (HTTPS or localhost). Export your own compatible checkpoint and motions; the
-repository does not include pretrained weights or a deployed public demo.
+repository does not include a deployed public demo; policy-only Release files
+require a separate matching world model to use the full world-model demo.
 
 ## Validation and provenance
 
@@ -143,7 +163,7 @@ npm ci --prefix web/demo  # ONNX export / Node parity test dependencies
 Tests cover algorithm/data contracts and selected numerical behavior. CUDA
 training, Isaac Sim and browser rendering need their respective runtimes and
 are not established by CPU unit tests. Historical private deployment reports
-are not part of this release, and this repository claims no paper-equivalent
+are not published, and this repository claims no paper-equivalent
 training score or three-hour convergence result.
 
 Third-party code and assets retain their original licenses and notices,

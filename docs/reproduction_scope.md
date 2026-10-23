@@ -27,6 +27,7 @@ results as equivalent without measuring the difference.
 
 ## Current limits
 
-No pretrained checkpoints, source motion datasets, deployment logs, or empirical
-performance claims are published with this initial code release. Unit tests
+Policy-only ONNX weights are distributed separately through GitHub Releases.
+Source motion datasets, deployment logs and empirical performance claims are
+not included. Unit tests
 verify targeted contracts; they do not demonstrate locomotion stability.
