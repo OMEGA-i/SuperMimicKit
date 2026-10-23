@@ -28,6 +28,7 @@ results as equivalent without measuring the difference.
 ## Current limits
 
 Complete checkpoint bundles are being prepared for GitHub Releases.
-Source motion datasets, deployment logs and empirical performance claims are
-not included. Unit tests
-verify targeted contracts; they do not demonstrate locomotion stability.
+Source motion datasets and deployment logs are not included. Selected development
+measurements are documented in [performance notes](performance.md); matched 100k
+tracking results remain pending. Unit tests verify targeted contracts, not
+locomotion stability.

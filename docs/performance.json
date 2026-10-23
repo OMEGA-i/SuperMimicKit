@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-23",
+  "robot": "G1",
+  "hardware": "NVIDIA H100",
+  "measurement": "development short run; not a benchmark of the current public commit",
+  "settings": {
+    "num_envs": 4096,
+    "precision": "tf32",
+    "compile": true,
+    "cuda_graphs": true,
+    "batch_size": 2048,
+    "policy_batch_size": 4096,
+    "horizon": 32,
+    "world_batches": 10,
+    "replay_steps": 64,
+    "motion_split": "train40"
+  },
+  "timing": {
+    "iterations": 36,
+    "mean_s": 0.45871022040308973,
+    "iterations_per_s": 2.180025548855777,
+    "collect_s": 0.21058296804161122,
+    "world_s": 0.0855378304517621,
+    "policy_s": 0.1625894219097164,
+    "gpu_util_mean_pct": 84.66666666666667,
+    "gpu_samples": 33
+  },
+  "onnx_policy": {
+    "g1": {
+      "checks": 16,
+      "onnx_checker": true,
+      "execution_provider": "CPUExecutionProvider",
+      "torch_onnx_max_abs": 2.6226043701171875e-06,
+      "atol": 0.0002,
+      "rtol": 0.0002,
+      "torch_version": "2.14.1",
+      "onnxruntime_version": "1.24.3",
+      "node_onnx_max_abs": 2.6226043701171875e-06,
+      "node_checks": 16,
+      "browser_webgpu_tested": false
+    },
+    "a3": {
+      "checks": 16,
+      "onnx_checker": true,
+      "execution_provider": "CPUExecutionProvider",
+      "torch_onnx_max_abs": 4.0531158447265625e-06,
+      "atol": 0.0002,
+      "rtol": 0.0002,
+      "torch_version": "2.14.1",
+      "onnxruntime_version": "1.24.3",
+      "node_onnx_max_abs": 4.0531158447265625e-06,
+      "node_checks": 16,
+      "browser_webgpu_tested": false
+    }
+  }
+}
