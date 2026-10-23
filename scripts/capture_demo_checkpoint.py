@@ -13,7 +13,7 @@ def capture(source, output):
         raise ValueError('A complete v2 policy/world checkpoint is required')
     iteration=int(data['iteration'])+1
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
-    target=output/f'demo_{iteration}.pt'
+    target=output/f'ckpt_{iteration}.pt'
     if target.exists():raise FileExistsError(target)
     saved={k:data[k] for k in ['config','joint_names','body_names','args','iteration','learner_version','training_contract']}
     for name in ['actor','world']:

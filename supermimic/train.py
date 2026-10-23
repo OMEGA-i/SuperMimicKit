@@ -433,7 +433,7 @@ def run(args):
                     "joint_names": motions.names[0],
                     "body_names": motions.names[1],
                     "args": vars(args),
-                }, args.output / f"demo_{iteration + 1}.pt", include_world=True)
+                }, args.output / f"ckpt_{iteration + 1}.pt", include_world=True)
             if (
                 iteration + 1
             ) % args.checkpoint_every == 0 or iteration + 1 == args.iterations:

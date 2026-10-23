@@ -12,9 +12,9 @@ def main():
     p.add_argument('--runs', nargs='+', type=Path, required=True)
     p.add_argument('--iteration', type=int, default=20000)
     p.add_argument('--every', type=int, default=0, help='Continuously preserve multiples of this interval')
-    p.add_argument('--include-world', action='store_true', help='Archive paired policy/world weights as demo_<iteration>.pt')
+    p.add_argument('--include-world', action='store_true', help='Archive paired policy/world weights as ckpt_<iteration>.pt')
     a = p.parse_args()
-    prefix = 'demo' if a.include_world else 'eval'
+    prefix = 'ckpt' if a.include_world else 'eval'
     if a.every < 0:
         p.error('--every must be nonnegative')
     torch.set_num_threads(2)

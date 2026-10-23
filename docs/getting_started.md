@@ -114,7 +114,7 @@ different statistic. See [metric limitations](reproduction_scope.md).
 Set `project`, `workspace`, `experiment_name` and `experiment_id` in your local
 configuration, with credentials supplied locally. No account credentials are
 included. The checkpoint capture helper can retain evaluation weights every
-500 updates and paired policy + world-model archives (`demo_<iteration>.pt`) every 10k updates.
+500 updates and paired policy + world-model archives (`ckpt_<iteration>.pt`) every 10k updates.
 For an already-running trainer, run the capture helper with `--every 10000
 --include-world`; it uses CPU mmap and does not require a training restart.
 

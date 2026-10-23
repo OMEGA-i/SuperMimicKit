@@ -7,7 +7,7 @@ def test_paired_archive_excludes_replay_and_is_immutable(tmp_path):
     d.update(joint_names=['joint'],body_names=['body'],iteration=9999,learner_version=2,
              actor={'weight':torch.ones(2)},world={'weight':torch.full((3,),2.)},
              replay={'large_buffer':torch.zeros(10)},optimizers=['not retained'])
-    p=tmp_path/'demo_10000.pt'
+    p=tmp_path/'ckpt_10000.pt'
     assert save_evaluation_checkpoint(d,p,include_world=True)
     d['world']['weight'].fill_(9)
     assert not save_evaluation_checkpoint(d,p,include_world=True)
