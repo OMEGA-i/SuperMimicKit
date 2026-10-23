@@ -16,4 +16,3 @@ def test_public_robot_registry_and_files():
         assert (ROOT / f'assets/robots/{name}/README.md').is_file()
     html = (ROOT / 'web/demo/dist/index.html').read_text()
     assert set(re.findall(r'<option value="([^"]+)"', html)) == set(robots)
-

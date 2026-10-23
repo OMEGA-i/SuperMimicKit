@@ -38,4 +38,3 @@ def test_reject_changed_scene_or_motion(tmp_path):
     source.write_bytes(b'changed')
     with pytest.raises(ValueError,match='different motion'):
         load_pair(source)
-
