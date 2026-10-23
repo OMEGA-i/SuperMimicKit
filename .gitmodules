@@ -1,0 +1,4 @@
+[submodule "third_party/UMR"]
+	path = third_party/UMR
+	url = https://github.com/OMEGA-i/UMR.git
+	ignore = dirty

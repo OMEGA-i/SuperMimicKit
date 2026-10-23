@@ -1,0 +1,275 @@
+{
+  "tracked_bodies": [
+    "h2_float_root",
+    "left_hip_yaw_link",
+    "left_knee_link",
+    "left_ankle_pitch_link",
+    "right_hip_yaw_link",
+    "right_knee_link",
+    "right_ankle_pitch_link",
+    "torso_link",
+    "left_shoulder_yaw_link",
+    "left_elbow_link",
+    "left_wrist_yaw_link",
+    "right_shoulder_yaw_link",
+    "right_elbow_link",
+    "right_wrist_yaw_link"
+  ],
+  "robot": "unitree_h2",
+  "asset_env": "SUPERMIMIC_H2_MJCF",
+  "asset_format": "mjcf",
+  "default_pose": {},
+  "actuators": [
+    {
+      "pattern": "left_hip_pitch_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_hip_roll_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_hip_yaw_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_knee_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_ankle_roll_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 19.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_ankle_pitch_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 66.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_hip_pitch_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_hip_roll_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_hip_yaw_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_knee_joint",
+      "stiffness": 200.0,
+      "damping": 4.0,
+      "effort": 360.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_ankle_roll_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 19.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_ankle_pitch_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 66.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "waist_yaw_joint",
+      "stiffness": 150.0,
+      "damping": 3.0,
+      "effort": 120.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "waist_roll_joint",
+      "stiffness": 150.0,
+      "damping": 3.0,
+      "effort": 120.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "waist_pitch_joint",
+      "stiffness": 150.0,
+      "damping": 3.0,
+      "effort": 120.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "head_pitch_joint",
+      "stiffness": 10.0,
+      "damping": 1.0,
+      "effort": 6.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "head_yaw_joint",
+      "stiffness": 10.0,
+      "damping": 1.0,
+      "effort": 6.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_shoulder_pitch_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_shoulder_roll_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_shoulder_yaw_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_elbow_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_wrist_roll_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_wrist_pitch_joint",
+      "stiffness": 20.0,
+      "damping": 1.0,
+      "effort": 10.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "left_wrist_yaw_joint",
+      "stiffness": 20.0,
+      "damping": 1.0,
+      "effort": 10.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_shoulder_pitch_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_shoulder_roll_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_shoulder_yaw_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_elbow_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_wrist_roll_joint",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort": 54.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_wrist_pitch_joint",
+      "stiffness": 20.0,
+      "damping": 1.0,
+      "effort": 10.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    },
+    {
+      "pattern": "right_wrist_yaw_joint",
+      "stiffness": 20.0,
+      "damping": 1.0,
+      "effort": 10.0,
+      "armature": 0.01,
+      "velocity": 1000.0
+    }
+  ],
+  "control_source": "https://raw.githubusercontent.com/unitreerobotics/unitree_rl_mjlab/1425b15f73bd4095f0df53709d7c389c3eb9e790/src/assets/robots/unitree_h2/h2_constants.py",
+  "status": "experimental; official body PD, effort capped by UMR MJCF; head PD is a simulation assumption; velocity=1000 is an effectively unbounded simulation cap, not a hardware specification",
+  "torso_body": "torso_link"
+}

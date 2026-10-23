@@ -1,0 +1,19 @@
+{
+  "tracked_bodies": [
+    "pelvis_link",
+    "left_hip_yaw_Link",
+    "left_knee_Link",
+    "left_ankle_roll_Link",
+    "right_hip_yaw_Link",
+    "right_knee_Link",
+    "right_ankle_roll_Link",
+    "torso_Link",
+    "left_shoulder_yaw_Link",
+    "left_elbow_Link",
+    "left_wrist_yaw_Link",
+    "right_shoulder_yaw_Link",
+    "right_elbow_Link",
+    "right_wrist_yaw_Link"
+  ],
+  "robot": "agibot_a3"
+}

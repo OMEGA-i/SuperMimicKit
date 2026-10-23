@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SuperMimicKit · Live imagination</title><link rel="stylesheet" href="style.css"><script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script></head>
+<body>
+<div id="viewport"></div>
+<div id="title"><h1>Live imagination</h1><div class="segments glass"><button id="worldToggle" aria-pressed="true" title="Toggle world model (w)"><i class="dot world"></i>World model</button><button id="refToggle" aria-pressed="false" title="Toggle goal pose (g)"><i class="dot goal"></i>Goal</button><button id="simToggle" aria-pressed="false" title="Toggle MuJoCo (s)"><i class="dot sim"></i>MuJoCo</button></div><div id="depth">STEP 0 SINCE THE LAST RESET</div></div>
+<div class="top-right"><select id="device" class="glass" aria-label="Device" title="Switch robot"><option value="g1">G1 · Unitree</option><option value="h2">H2 · Unitree</option><option value="a3">A3 · Agibot</option></select><a class="glass" href="https://github.com/OMEGA-i/SuperMimicKit" target="_blank" rel="noopener">‹ &nbsp;SuperMimicKit</a></div>
+<div id="dragHint">drag the robot — it has to catch itself</div>
+<div id="dock" class="glass">
+<button id="reset" class="icon" aria-label="Reset" title="Reset (r)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v6h6M4 10a8 8 0 1 1 1 8"/></svg></button><button id="play" class="icon" aria-label="Play or pause" title="Play or pause (Space)">Ⅱ</button><span class="divider desktop"></span>
+<div id="ctx"><label class="policy-label">Policy <input id="policy" type="checkbox" checked aria-label="Policy"><span class="switch"></span></label><label class="slider">Action noise <output id="noiseValue">0.00</output><input id="noise" aria-label="Action noise" type="range" min="0" max="0.25" step="0.01" value="0"></label><label class="slider">Friction <output id="frictionValue">50%</output><input id="friction" aria-label="Friction" type="range" min="0.3" max="1.7" step="0.014" value="1"></label></div>
+<button id="ctxBtn" class="icon" aria-label="Controls" aria-expanded="false">☷</button><span class="divider"></span><button id="motionsBtn" aria-expanded="false"><span>☰</span><span id="motionLabel">Motions</span></button>
+<div id="motionPanel" class="glass" hidden><input id="filter" type="search" placeholder="Filter motions" aria-label="Filter motions"><div id="motions"></div><div id="checkpoint"></div></div>
+</div>
+<div id="notice" class="glass" role="status">Loading robot…</div>
+<script type="module" src="app.js"></script></body></html>

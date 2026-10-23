@@ -1,0 +1,19 @@
+{
+  "tracked_bodies": [
+    "h2_float_root",
+    "left_hip_yaw_link",
+    "left_knee_link",
+    "left_ankle_pitch_link",
+    "right_hip_yaw_link",
+    "right_knee_link",
+    "right_ankle_pitch_link",
+    "torso_link",
+    "left_shoulder_yaw_link",
+    "left_elbow_link",
+    "left_wrist_yaw_link",
+    "right_shoulder_yaw_link",
+    "right_elbow_link",
+    "right_wrist_yaw_link"
+  ],
+  "robot": "unitree_h2"
+}

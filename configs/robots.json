@@ -1,0 +1,23 @@
+{
+  "g1": {
+    "robot": "unitree_g1",
+    "retargeter": "UMR",
+    "pipeline_config": "configs/umr/g1.json",
+    "export_config": "configs/retarget/g1.json",
+    "acceptance": "180-frame UMR smoke and five-pose PhysX FK check completed; full dataset and dynamic validation pending"
+  },
+  "h2": {
+    "robot": "unitree_h2",
+    "retargeter": "UMR",
+    "pipeline_config": "configs/umr/h2.json",
+    "export_config": "configs/retarget/h2.json",
+    "acceptance": "180-frame UMR smoke and five-pose PhysX FK check completed; full dataset and dynamic validation pending"
+  },
+  "a3": {
+    "robot": "agibot_a3",
+    "retargeter": "UMR",
+    "pipeline_config": "configs/umr/a3.json",
+    "export_config": "configs/retarget/a3.json",
+    "acceptance": "180-frame UMR smoke and five-pose PhysX FK check completed; full dataset and dynamic validation pending"
+  }
+}

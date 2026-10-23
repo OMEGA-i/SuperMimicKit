@@ -1,0 +1,10 @@
+{
+  "repository": "unitreerobotics/unitree_ros",
+  "commit": "202c59879872d0c8d61ab20b93eaedd9ec04b144",
+  "path": "robots/h2_description/H2.urdf",
+  "sha256": "49db2556d51695824bf741dbfa89b3c989265bff99e31bb1a95ce291cf16e72e",
+  "restored_link": "pelvis",
+  "body_name": "h2_float_root",
+  "changes": "Restore pelvis inertial in native free root; preserve all existing joint transforms and geometry.",
+  "matching_evidence": "All 31 non-root link masses agree within MJCF rounding; newer revisions change wrist masses."
+}

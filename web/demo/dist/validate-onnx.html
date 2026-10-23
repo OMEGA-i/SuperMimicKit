@@ -1,0 +1,35 @@
+<!doctype html><meta charset="utf-8"><title>ONNX WebGPU validation</title>
+<h1>ONNX WebGPU validation</h1><pre id="output">Starting…</pre>
+<script type="module">
+import {Network,observation} from './inference-onnx.js';
+const output=document.getElementById('output'),results=[];
+const render=()=>output.textContent=JSON.stringify(results,null,2);
+const err=(a,b)=>Math.max(...a.map((v,i)=>Math.abs(v-b[i])));
+try{
+ const adapter=await navigator.gpu?.requestAdapter();if(!adapter)throw Error('No WebGPU adapter');
+ const device=await adapter.requestDevice();
+ results.push({adapter:device.adapterInfo?.description||adapter.info?.description||'WebGPU',backend:'webgpu',cpu_fallback:false});render();
+ for(const robot of ['g1','h2','a3']){
+  const base='assets/'+robot+'/',suffix=new URLSearchParams(location.search).has('staged')?'.tmp':'';
+  const m=await fetch(base+'metadata.json'+suffix,{cache:'no-store'}).then(r=>r.json());
+  const f=await fetch(base+m.inference_fixture).then(r=>r.json());
+  const n=new Network(device),row={robot,iteration:m.completed_iterations,status:'loading'};results.push(row);render();
+  try{
+   await n.load(m,base);const start=performance.now();
+   const a=await n.action(new Float32Array(f.history),new Float32Array(f.goals));
+   const w=await n.world(new Float32Array(f.state),a,m.context,m);
+   row.action_error=err(a,f.action);row.world_error=err(w,f.world_next);
+   let h=new Float32Array(f.history),s=new Float32Array(f.state),maxError=0;
+   for(const expected of f.rollout){
+    const a=await n.action(h,new Float32Array(f.goals));s=await n.world(s,a,m.context,m);
+    maxError=Math.max(maxError,err(a,expected.action),err(s,expected.state));
+    h=Float32Array.from([...h.slice(m.layout.obs_dim),...observation(s,a,m,new Float32Array(f.goals.slice(m.layout.dim,2*m.layout.dim)))]);
+   }
+   row.rollout32_max_abs=maxError;row.elapsed_ms=performance.now()-start;
+   if(![row.action_error,row.world_error,maxError].every(Number.isFinite)||row.action_error>.005||row.world_error>.005||maxError>.01)throw Error('Parity tolerance exceeded');
+   row.status='passed';
+  }finally{await n.dispose();render();}
+ }
+ document.title='PASS · ONNX WebGPU';
+}catch(e){results.push({error:String(e),stack:e.stack});render();document.title='FAIL · ONNX WebGPU';}
+</script>

@@ -1,0 +1,64 @@
+{
+  "robot": "unitree_g1_29dof",
+  "asset_env": "SUPERMIMIC_G1_MJCF",
+  "tracked_bodies": [
+    "pelvis",
+    "left_hip_yaw_link",
+    "left_knee_link",
+    "left_ankle_roll_link",
+    "right_hip_yaw_link",
+    "right_knee_link",
+    "right_ankle_roll_link",
+    "torso_link",
+    "left_shoulder_yaw_link",
+    "left_elbow_link",
+    "left_wrist_yaw_link",
+    "right_shoulder_yaw_link",
+    "right_elbow_link",
+    "right_wrist_yaw_link"
+  ],
+  "default_pose": {
+    ".*_hip_pitch_joint": -0.312,
+    ".*_knee_joint": 0.669,
+    ".*_ankle_pitch_joint": -0.363,
+    ".*_elbow_joint": 0.6,
+    "left_shoulder_roll_joint": 0.2,
+    "right_shoulder_roll_joint": -0.2,
+    ".*_shoulder_pitch_joint": 0.2
+  },
+  "actuators": [
+    {
+      "pattern": ".*_hip_(pitch|yaw)_joint|waist_yaw_joint",
+      "armature": 0.01017752,
+      "effort": 88,
+      "velocity": 32
+    },
+    {
+      "pattern": ".*_hip_roll_joint|.*_knee_joint",
+      "armature": 0.025101925,
+      "effort": 139,
+      "velocity": 20
+    },
+    {
+      "pattern": ".*_ankle_.*|waist_(roll|pitch)_joint",
+      "armature": 0.00721945,
+      "effort": 50,
+      "velocity": 37
+    },
+    {
+      "pattern": ".*_(shoulder|elbow)_.*|.*_wrist_roll_joint",
+      "armature": 0.003609725,
+      "effort": 25,
+      "velocity": 37
+    },
+    {
+      "pattern": ".*_wrist_(pitch|yaw)_joint",
+      "armature": 0.00425,
+      "effort": 5,
+      "velocity": 22
+    }
+  ],
+  "asset_format": "mjcf",
+  "torso_body": "torso_link",
+  "mujoco_multiccd": false
+}

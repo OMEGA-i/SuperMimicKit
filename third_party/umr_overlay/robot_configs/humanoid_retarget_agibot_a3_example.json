@@ -1,0 +1,12 @@
+{
+  "robot": {
+    "name": "agibot_a3",
+    "point_cloud_center": "body:torso_Link",
+    "tpose_qpos": {
+      "left_shoulder_roll_joint": 1.5707963267948966,
+      "right_shoulder_roll_joint": -1.5707963267948966,
+      "left_elbow_joint": 1.5707963267948966,
+      "right_elbow_joint": 1.5707963267948966
+    }
+  }
+}

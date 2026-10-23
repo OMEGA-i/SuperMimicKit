@@ -1,0 +1,19 @@
+{
+  "a3": {
+    "source": "https://github.com/AgibotTech/sonic_for_a3/blob/c9df753d31ef63c930b825b1b6767cabd37c1549/gear_sonic/envs/manager_env/robots/a3.py",
+    "source_sha256": "731d6739d41ab07e3e09803e399fcdd2b2adc40f5db096fac02f5ead37be9867",
+    "status": "mapped to configs/a3.json; dynamic training validation pending",
+    "differences": [
+      "official active-joint list has 29 joints and no head joints",
+      "official configuration includes 4 passive-foot joints; current UMR model has rigid feet",
+      "Use base A3 gains, not 024 overrides; rigid-foot model has head joints locked at zero; placeholder head PD 10/1, effort 6, velocity 2."
+    ],
+    "motor_parameters": "https://github.com/AgibotTech/sonic_for_a3/blob/c9df753d31ef63c930b825b1b6767cabd37c1549/gear_sonic/utils/a3_motor_params.py"
+  },
+  "h2": {
+    "source": "https://raw.githubusercontent.com/unitreerobotics/unitree_rl_mjlab/1425b15f73bd4095f0df53709d7c389c3eb9e790/src/assets/robots/unitree_h2/h2_constants.py",
+    "source_sha256": "a8d9f9f0a84a87f4abbb8b258bc581c41e15ca5b7aefe2bfcefdd5fe805f6c9f",
+    "status": "mapped to configs/h2.json; dynamic training validation pending",
+    "note": "Official body PD and armature; effort capped to UMR model limits. Head PD 10/1 and effort 6 are explicit simulation assumptions. Velocity 1000 is an effectively unbounded simulation cap because the source specifies no velocity limits."
+  }
+}
