@@ -9,6 +9,12 @@ ONNX Runtime Web / WebGPU. An independent implementation inspired by
 [SuperMimic](https://supermimic.github.io/), with reference to
 [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed).
 
+[![SuperMimicKit teaser: G1, H2 and A3](docs/media/teaser.gif)](docs/media/teaser.mp4)
+
+[Watch the 36-second 1080p video](docs/media/teaser.mp4). Actual browser capture:
+G1 55.5k · H2 30k · A3 100k, ONNX Runtime Web / WebGPU.
+World-model visualization resynchronizes to MuJoCo every 32 steps.
+
 ## Status
 
 - [x] G1 / H2 / A3 configurations and canonical robot assets via Git LFS.

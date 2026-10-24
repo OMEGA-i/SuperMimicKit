@@ -8,6 +8,12 @@
 运行浏览器 demo。独立实现，参考 [SuperMimic](https://supermimic.github.io/)
 与 [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed)。
 
+[![SuperMimicKit 演示：G1、H2、A3](docs/media/teaser.gif)](docs/media/teaser.mp4)
+
+[观看 36 秒 1080p 完整视频](docs/media/teaser.mp4)。实际浏览器录制：
+G1 55.5k · H2 30k · A3 100k，ONNX Runtime Web / WebGPU。
+World model 展示每 32 步与 MuJoCo 物理状态重新同步。
+
 ## 项目进展
 
 - [x] G1 / H2 / A3 配置与 Git LFS 管理的统一机器人资产。
