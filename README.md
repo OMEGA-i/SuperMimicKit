@@ -68,6 +68,7 @@ git clone --recurse-submodules https://github.com/OMEGA-i/SuperMimicKit.git
 cd SuperMimicKit
 git lfs install
 git lfs pull
+git -C third_party/soma-retargeter lfs pull
 uv venv --python 3.12 .venv
 uv pip install --python .venv/bin/python -e '.[mjwarp,qc,test,tracking,web-refresh]'
 bash scripts/bootstrap_umr.sh
@@ -75,6 +76,9 @@ bash scripts/bootstrap_umr.sh
 
 G1, H2 and A3 robot assets are included in `assets/robots`; meshes use Git LFS.
 Prepare licensed retargeted motions before training.
+The upstream [SOMA Retargeter](https://github.com/NVIDIA/soma-retargeter) is pinned
+as `third_party/soma-retargeter`; follow its README for installation and usage.
+For an existing checkout, run `git submodule update --init third_party/soma-retargeter`.
 See the [setup, data and training guide](docs/getting_started.md),
 [UMR integration notes](third_party/umr_overlay/README.md) and
 [browser demo guide](web/demo/README.md).

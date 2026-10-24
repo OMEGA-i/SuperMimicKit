@@ -2,3 +2,6 @@
 	path = third_party/UMR
 	url = https://github.com/OMEGA-i/UMR.git
 	ignore = dirty
+[submodule "third_party/soma-retargeter"]
+	path = third_party/soma-retargeter
+	url = https://github.com/NVIDIA/soma-retargeter.git
