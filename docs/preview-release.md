@@ -7,13 +7,12 @@ license. It contains no optimizer, replay buffer, raw training checkpoint or mot
 
 | Robot | Policy iterations | World-model iterations | train40 return | Failed / 40 | val37 return | Failed / 37 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| G1 | 60,000 | **55,500** | 0.792183 | 3 | 0.265039 | 32 |
+| G1 | 55,500 | **55,500** | 0.798961 | 3 | 0.310322 | 31 |
 | H2 | 30,000 | 30,000 | 0.652555 | 6 | 0.259997 | 30 |
 | A3 | 100,000 | 100,000 | Pending | Pending | Pending | Pending |
 
 The return/failure rows measure the **policy in MuJoCo**, not world-model prediction
-quality. G1 is deliberately a mixed pair; its world model is not relabeled as
-60k. A3's exact 100k full-clip results have not been verified for this release.
+quality. G1 now uses the original paired 55.5k policy/world export. A3's exact 100k full-clip results have not been verified for this release.
 
 ## Why G1 and H2 are not 100k
 

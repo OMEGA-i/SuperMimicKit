@@ -1,0 +1,729 @@
+{
+  "checkpoint_iterations": 55500,
+  "snapshot_sha256": "b0dc0f0cfe3ac60189f21722ad528b444f9e0a7092f81b98fabb5bd1066dd563",
+  "protocol": {
+    "reward": "v2 BeyondMimic xy/yaw-aligned bodies, global root, 90% soft limits",
+    "start": "frame 0, reference qpos/qvel",
+    "noise": false,
+    "domain_randomization": false,
+    "friction": 1.0,
+    "action_clip": [
+      -20,
+      20
+    ],
+    "physics": "MuJoCo Warp, same model/solver/PD as training",
+    "termination": "reference root height error >0.25m or gravity-z difference >0.8",
+    "return": "undiscounted reward through terminal step / (0.1 * (source_frames-1)); no clipping",
+    "aggregation": "arithmetic mean of per-motion normalized returns",
+    "future_goals": "last frame repeated at clip end"
+  },
+  "splits": {
+    "train40": {
+      "normalized_return": 0.7989607743368314,
+      "failed_motions": 3,
+      "motion_count": 40,
+      "motions": [
+        {
+          "motion": "dance1_subject1",
+          "source_frames": 6574,
+          "expected_transitions": 6573,
+          "executed_transitions": 6573,
+          "failed": false,
+          "return": 553.803416148563,
+          "normalized_return": 0.8425428669306406
+        },
+        {
+          "motion": "dance1_subject2",
+          "source_frames": 6574,
+          "expected_transitions": 6573,
+          "executed_transitions": 6573,
+          "failed": false,
+          "return": 542.5249456642196,
+          "normalized_return": 0.8253840799326165
+        },
+        {
+          "motion": "dance1_subject3",
+          "source_frames": 6574,
+          "expected_transitions": 6573,
+          "executed_transitions": 6573,
+          "failed": false,
+          "return": 572.7460563629866,
+          "normalized_return": 0.8713617328460771
+        },
+        {
+          "motion": "dance2_subject1",
+          "source_frames": 11284,
+          "expected_transitions": 11283,
+          "executed_transitions": 11283,
+          "failed": false,
+          "return": 940.358251686208,
+          "normalized_return": 0.8334292395563422
+        },
+        {
+          "motion": "dance2_subject2",
+          "source_frames": 11284,
+          "expected_transitions": 11283,
+          "executed_transitions": 11283,
+          "failed": false,
+          "return": 954.8244699537754,
+          "normalized_return": 0.8462504906788537
+        },
+        {
+          "motion": "dance2_subject3",
+          "source_frames": 11284,
+          "expected_transitions": 11283,
+          "executed_transitions": 11283,
+          "failed": false,
+          "return": 985.0597520787269,
+          "normalized_return": 0.8730476907289242
+        },
+        {
+          "motion": "dance2_subject4",
+          "source_frames": 11284,
+          "expected_transitions": 11283,
+          "executed_transitions": 11283,
+          "failed": false,
+          "return": 939.5872289152489,
+          "normalized_return": 0.8327458905023739
+        },
+        {
+          "motion": "dance2_subject5",
+          "source_frames": 11284,
+          "expected_transitions": 11283,
+          "executed_transitions": 11283,
+          "failed": false,
+          "return": 976.0110517293215,
+          "normalized_return": 0.8650279265192146
+        },
+        {
+          "motion": "fallAndGetUp1_subject1",
+          "source_frames": 8410,
+          "expected_transitions": 8409,
+          "executed_transitions": 8409,
+          "failed": false,
+          "return": 667.5260034434032,
+          "normalized_return": 0.7938232656236798
+        },
+        {
+          "motion": "fallAndGetUp1_subject4",
+          "source_frames": 8410,
+          "expected_transitions": 8409,
+          "executed_transitions": 8409,
+          "failed": false,
+          "return": 662.1464805165306,
+          "normalized_return": 0.7874259261413543
+        },
+        {
+          "motion": "fallAndGetUp1_subject5",
+          "source_frames": 8410,
+          "expected_transitions": 8409,
+          "executed_transitions": 1717,
+          "failed": true,
+          "return": 128.4991716699442,
+          "normalized_return": 0.15281147334902526
+        },
+        {
+          "motion": "fallAndGetUp2_subject2",
+          "source_frames": 8195,
+          "expected_transitions": 8194,
+          "executed_transitions": 8194,
+          "failed": false,
+          "return": 643.5346513949335,
+          "normalized_return": 0.7853729951437491
+        },
+        {
+          "motion": "fallAndGetUp2_subject3",
+          "source_frames": 8195,
+          "expected_transitions": 8194,
+          "executed_transitions": 4897,
+          "failed": true,
+          "return": 390.1103981146589,
+          "normalized_return": 0.47609273430717736
+        },
+        {
+          "motion": "fallAndGetUp3_subject1",
+          "source_frames": 5109,
+          "expected_transitions": 5108,
+          "executed_transitions": 5108,
+          "failed": false,
+          "return": 418.59330057541956,
+          "normalized_return": 0.8194856804428124
+        },
+        {
+          "motion": "fight1_subject2",
+          "source_frames": 12244,
+          "expected_transitions": 12243,
+          "executed_transitions": 12243,
+          "failed": false,
+          "return": 1015.3401974942535,
+          "normalized_return": 0.8293230066159978
+        },
+        {
+          "motion": "fight1_subject3",
+          "source_frames": 12244,
+          "expected_transitions": 12243,
+          "executed_transitions": 12243,
+          "failed": false,
+          "return": 1018.4482372053899,
+          "normalized_return": 0.8318616324325298
+        },
+        {
+          "motion": "fight1_subject5",
+          "source_frames": 12244,
+          "expected_transitions": 12243,
+          "executed_transitions": 12243,
+          "failed": false,
+          "return": 1086.520113458857,
+          "normalized_return": 0.8874622805895106
+        },
+        {
+          "motion": "fightAndSports1_subject1",
+          "source_frames": 12257,
+          "expected_transitions": 12256,
+          "executed_transitions": 12256,
+          "failed": false,
+          "return": 1004.3093895197671,
+          "normalized_return": 0.8194430560751478
+        },
+        {
+          "motion": "fightAndSports1_subject4",
+          "source_frames": 12257,
+          "expected_transitions": 12256,
+          "executed_transitions": 12256,
+          "failed": false,
+          "return": 1021.2882372289896,
+          "normalized_return": 0.8332965548083745
+        },
+        {
+          "motion": "jumps1_subject1",
+          "source_frames": 12222,
+          "expected_transitions": 12221,
+          "executed_transitions": 12221,
+          "failed": false,
+          "return": 1024.8480317778885,
+          "normalized_return": 0.838595902341397
+        },
+        {
+          "motion": "jumps1_subject2",
+          "source_frames": 12222,
+          "expected_transitions": 12221,
+          "executed_transitions": 12221,
+          "failed": false,
+          "return": 1017.6302282530814,
+          "normalized_return": 0.8326898360055831
+        },
+        {
+          "motion": "jumps1_subject5",
+          "source_frames": 12222,
+          "expected_transitions": 12221,
+          "executed_transitions": 12221,
+          "failed": false,
+          "return": 1022.8834565076977,
+          "normalized_return": 0.8369883617887112
+        },
+        {
+          "motion": "run1_subject2",
+          "source_frames": 11890,
+          "expected_transitions": 11889,
+          "executed_transitions": 11889,
+          "failed": false,
+          "return": 1016.6931483196095,
+          "normalized_return": 0.8551544515449704
+        },
+        {
+          "motion": "run1_subject5",
+          "source_frames": 11890,
+          "expected_transitions": 11889,
+          "executed_transitions": 11889,
+          "failed": false,
+          "return": 995.6908955220133,
+          "normalized_return": 0.8374891707254608
+        },
+        {
+          "motion": "run2_subject1",
+          "source_frames": 12240,
+          "expected_transitions": 12239,
+          "executed_transitions": 12239,
+          "failed": false,
+          "return": 1013.6209807703272,
+          "normalized_return": 0.8281893623260563
+        },
+        {
+          "motion": "run2_subject4",
+          "source_frames": 12240,
+          "expected_transitions": 12239,
+          "executed_transitions": 12239,
+          "failed": false,
+          "return": 1004.8598853759468,
+          "normalized_return": 0.8210310199617976
+        },
+        {
+          "motion": "sprint1_subject2",
+          "source_frames": 13655,
+          "expected_transitions": 13654,
+          "executed_transitions": 2173,
+          "failed": true,
+          "return": 182.22614774340764,
+          "normalized_return": 0.1334598978212314
+        },
+        {
+          "motion": "sprint1_subject4",
+          "source_frames": 13655,
+          "expected_transitions": 13654,
+          "executed_transitions": 13654,
+          "failed": false,
+          "return": 1122.0709424670786,
+          "normalized_return": 0.8217891624460719
+        },
+        {
+          "motion": "walk1_subject1",
+          "source_frames": 13065,
+          "expected_transitions": 13064,
+          "executed_transitions": 13064,
+          "failed": false,
+          "return": 1120.4925112612545,
+          "normalized_return": 0.8576948027567667
+        },
+        {
+          "motion": "walk1_subject2",
+          "source_frames": 13065,
+          "expected_transitions": 13064,
+          "executed_transitions": 13064,
+          "failed": false,
+          "return": 1141.7086862325668,
+          "normalized_return": 0.8739349853768091
+        },
+        {
+          "motion": "walk1_subject5",
+          "source_frames": 13065,
+          "expected_transitions": 13064,
+          "executed_transitions": 13064,
+          "failed": false,
+          "return": 1155.7877122629434,
+          "normalized_return": 0.8847119493750234
+        },
+        {
+          "motion": "walk2_subject1",
+          "source_frames": 11909,
+          "expected_transitions": 11908,
+          "executed_transitions": 11908,
+          "failed": false,
+          "return": 1033.9291626447812,
+          "normalized_return": 0.8682642931214845
+        },
+        {
+          "motion": "walk2_subject3",
+          "source_frames": 11909,
+          "expected_transitions": 11908,
+          "executed_transitions": 11908,
+          "failed": false,
+          "return": 1042.755063880235,
+          "normalized_return": 0.8756760338617872
+        },
+        {
+          "motion": "walk2_subject4",
+          "source_frames": 11909,
+          "expected_transitions": 11908,
+          "executed_transitions": 11908,
+          "failed": false,
+          "return": 1034.270376028493,
+          "normalized_return": 0.8685508344128186
+        },
+        {
+          "motion": "walk3_subject1",
+          "source_frames": 12330,
+          "expected_transitions": 12329,
+          "executed_transitions": 12329,
+          "failed": false,
+          "return": 1059.6560508045368,
+          "normalized_return": 0.859482545073466
+        },
+        {
+          "motion": "walk3_subject2",
+          "source_frames": 12330,
+          "expected_transitions": 12329,
+          "executed_transitions": 12329,
+          "failed": false,
+          "return": 1088.011757795699,
+          "normalized_return": 0.8824817391927444
+        },
+        {
+          "motion": "walk3_subject3",
+          "source_frames": 12330,
+          "expected_transitions": 12329,
+          "executed_transitions": 12329,
+          "failed": false,
+          "return": 1060.2577043045312,
+          "normalized_return": 0.8599705436849352
+        },
+        {
+          "motion": "walk3_subject4",
+          "source_frames": 12330,
+          "expected_transitions": 12329,
+          "executed_transitions": 12329,
+          "failed": false,
+          "return": 1068.3462467622012,
+          "normalized_return": 0.8665311262930133
+        },
+        {
+          "motion": "walk3_subject5",
+          "source_frames": 12330,
+          "expected_transitions": 12329,
+          "executed_transitions": 12329,
+          "failed": false,
+          "return": 1065.460223413771,
+          "normalized_return": 0.864190284950422
+        },
+        {
+          "motion": "walk4_subject1",
+          "source_frames": 8195,
+          "expected_transitions": 8194,
+          "executed_transitions": 8194,
+          "failed": false,
+          "return": 643.5290401800739,
+          "normalized_return": 0.7853661471883033
+        }
+      ]
+    },
+    "val37": {
+      "normalized_return": 0.3103218133218674,
+      "failed_motions": 31,
+      "motion_count": 37,
+      "motions": [
+        {
+          "motion": "aiming1_subject1",
+          "source_frames": 11972,
+          "expected_transitions": 11971,
+          "executed_transitions": 11971,
+          "failed": false,
+          "return": 992.9287923593074,
+          "normalized_return": 0.8294451696678921
+        },
+        {
+          "motion": "aiming1_subject4",
+          "source_frames": 11972,
+          "expected_transitions": 11971,
+          "executed_transitions": 11971,
+          "failed": false,
+          "return": 910.2463646765682,
+          "normalized_return": 0.7603762285861172
+        },
+        {
+          "motion": "aiming2_subject2",
+          "source_frames": 15285,
+          "expected_transitions": 15284,
+          "executed_transitions": 15284,
+          "failed": false,
+          "return": 1253.8535984270275,
+          "normalized_return": 0.8203700460602341
+        },
+        {
+          "motion": "aiming2_subject3",
+          "source_frames": 15285,
+          "expected_transitions": 15284,
+          "executed_transitions": 15284,
+          "failed": false,
+          "return": 1250.0637753746705,
+          "normalized_return": 0.8178904445214878
+        },
+        {
+          "motion": "aiming2_subject5",
+          "source_frames": 15285,
+          "expected_transitions": 15284,
+          "executed_transitions": 15284,
+          "failed": false,
+          "return": 1248.9233386777341,
+          "normalized_return": 0.8171442807693814
+        },
+        {
+          "motion": "ground1_subject1",
+          "source_frames": 7902,
+          "expected_transitions": 7901,
+          "executed_transitions": 7750,
+          "failed": true,
+          "return": 385.6509630234614,
+          "normalized_return": 0.4881039680401977
+        },
+        {
+          "motion": "ground1_subject4",
+          "source_frames": 7902,
+          "expected_transitions": 7901,
+          "executed_transitions": 6445,
+          "failed": true,
+          "return": 429.9657421541633,
+          "normalized_return": 0.5441915228771985
+        },
+        {
+          "motion": "ground1_subject5",
+          "source_frames": 7902,
+          "expected_transitions": 7901,
+          "executed_transitions": 1644,
+          "failed": true,
+          "return": 106.62337714014575,
+          "normalized_return": 0.13494921174301736
+        },
+        {
+          "motion": "ground2_subject2",
+          "source_frames": 9249,
+          "expected_transitions": 9248,
+          "executed_transitions": 1437,
+          "failed": true,
+          "return": 101.75836514257304,
+          "normalized_return": 0.11003283573285824
+        },
+        {
+          "motion": "ground2_subject3",
+          "source_frames": 9249,
+          "expected_transitions": 9248,
+          "executed_transitions": 2651,
+          "failed": true,
+          "return": 124.62330505396676,
+          "normalized_return": 0.13475703579038723
+        },
+        {
+          "motion": "multipleActions1_subject1",
+          "source_frames": 7644,
+          "expected_transitions": 7643,
+          "executed_transitions": 507,
+          "failed": true,
+          "return": 44.019878902006894,
+          "normalized_return": 0.0575950276135957
+        },
+        {
+          "motion": "multipleActions1_subject2",
+          "source_frames": 7644,
+          "expected_transitions": 7643,
+          "executed_transitions": 997,
+          "failed": true,
+          "return": 84.50683547277004,
+          "normalized_return": 0.11056762635414433
+        },
+        {
+          "motion": "multipleActions1_subject3",
+          "source_frames": 7644,
+          "expected_transitions": 7643,
+          "executed_transitions": 462,
+          "failed": true,
+          "return": 35.13421696983278,
+          "normalized_return": 0.04596914500978617
+        },
+        {
+          "motion": "multipleActions1_subject4",
+          "source_frames": 7644,
+          "expected_transitions": 7643,
+          "executed_transitions": 2477,
+          "failed": true,
+          "return": 216.06197658600286,
+          "normalized_return": 0.28269263383074794
+        },
+        {
+          "motion": "obstacles1_subject1",
+          "source_frames": 8984,
+          "expected_transitions": 8983,
+          "executed_transitions": 385,
+          "failed": true,
+          "return": 35.996987358666956,
+          "normalized_return": 0.040072345372182266
+        },
+        {
+          "motion": "obstacles1_subject2",
+          "source_frames": 8984,
+          "expected_transitions": 8983,
+          "executed_transitions": 421,
+          "failed": true,
+          "return": 39.89794603222981,
+          "normalized_return": 0.044414946648563346
+        },
+        {
+          "motion": "obstacles1_subject5",
+          "source_frames": 8984,
+          "expected_transitions": 8983,
+          "executed_transitions": 816,
+          "failed": true,
+          "return": 71.51729991473258,
+          "normalized_return": 0.07961404974572389
+        },
+        {
+          "motion": "obstacles2_subject1",
+          "source_frames": 12204,
+          "expected_transitions": 12203,
+          "executed_transitions": 3203,
+          "failed": true,
+          "return": 277.89166157483123,
+          "normalized_return": 0.2277240436413121
+        },
+        {
+          "motion": "obstacles2_subject2",
+          "source_frames": 12204,
+          "expected_transitions": 12203,
+          "executed_transitions": 2941,
+          "failed": true,
+          "return": 239.07774953451008,
+          "normalized_return": 0.19591718427291757
+        },
+        {
+          "motion": "obstacles2_subject5",
+          "source_frames": 12204,
+          "expected_transitions": 12203,
+          "executed_transitions": 654,
+          "failed": true,
+          "return": 56.6479914970696,
+          "normalized_return": 0.0464213629684516
+        },
+        {
+          "motion": "obstacles3_subject3",
+          "source_frames": 6554,
+          "expected_transitions": 6553,
+          "executed_transitions": 6553,
+          "failed": false,
+          "return": 528.3409850322641,
+          "normalized_return": 0.8062581945281293
+        },
+        {
+          "motion": "obstacles3_subject4",
+          "source_frames": 6554,
+          "expected_transitions": 6553,
+          "executed_transitions": 364,
+          "failed": true,
+          "return": 34.76260415278375,
+          "normalized_return": 0.05304838211559135
+        },
+        {
+          "motion": "obstacles4_subject2",
+          "source_frames": 12334,
+          "expected_transitions": 12333,
+          "executed_transitions": 673,
+          "failed": true,
+          "return": 62.396724990103394,
+          "normalized_return": 0.050593304564767044
+        },
+        {
+          "motion": "obstacles4_subject3",
+          "source_frames": 12334,
+          "expected_transitions": 12333,
+          "executed_transitions": 1183,
+          "failed": true,
+          "return": 83.81657104915939,
+          "normalized_return": 0.06796121603076351
+        },
+        {
+          "motion": "obstacles4_subject4",
+          "source_frames": 12334,
+          "expected_transitions": 12333,
+          "executed_transitions": 859,
+          "failed": true,
+          "return": 77.92092416994274,
+          "normalized_return": 0.06318083279408185
+        },
+        {
+          "motion": "obstacles5_subject2",
+          "source_frames": 12309,
+          "expected_transitions": 12308,
+          "executed_transitions": 899,
+          "failed": true,
+          "return": 71.89444808548433,
+          "normalized_return": 0.05841277643264379
+        },
+        {
+          "motion": "obstacles5_subject3",
+          "source_frames": 12309,
+          "expected_transitions": 12308,
+          "executed_transitions": 3650,
+          "failed": true,
+          "return": 314.26187228038907,
+          "normalized_return": 0.25533137781364695
+        },
+        {
+          "motion": "obstacles5_subject4",
+          "source_frames": 12309,
+          "expected_transitions": 12308,
+          "executed_transitions": 11625,
+          "failed": true,
+          "return": 928.2584149192407,
+          "normalized_return": 0.7541910774240368
+        },
+        {
+          "motion": "obstacles6_subject1",
+          "source_frames": 12584,
+          "expected_transitions": 12583,
+          "executed_transitions": 1141,
+          "failed": true,
+          "return": 79.1508565125987,
+          "normalized_return": 0.06290300678785887
+        },
+        {
+          "motion": "obstacles6_subject4",
+          "source_frames": 12584,
+          "expected_transitions": 12583,
+          "executed_transitions": 385,
+          "failed": true,
+          "return": 31.439323153346777,
+          "normalized_return": 0.02498555347162763
+        },
+        {
+          "motion": "obstacles6_subject5",
+          "source_frames": 12584,
+          "expected_transitions": 12583,
+          "executed_transitions": 476,
+          "failed": true,
+          "return": 43.86815036647022,
+          "normalized_return": 0.03486302842261298
+        },
+        {
+          "motion": "push1_subject2",
+          "source_frames": 5109,
+          "expected_transitions": 5108,
+          "executed_transitions": 3124,
+          "failed": true,
+          "return": 275.0755057457718,
+          "normalized_return": 0.538518981764281
+        },
+        {
+          "motion": "pushAndFall1_subject1",
+          "source_frames": 8264,
+          "expected_transitions": 8263,
+          "executed_transitions": 3200,
+          "failed": true,
+          "return": 274.9899624675163,
+          "normalized_return": 0.3327967645285935
+        },
+        {
+          "motion": "pushAndFall1_subject4",
+          "source_frames": 8264,
+          "expected_transitions": 8263,
+          "executed_transitions": 1122,
+          "failed": true,
+          "return": 97.6378252665163,
+          "normalized_return": 0.1181626851130726
+        },
+        {
+          "motion": "pushAndStumble1_subject2",
+          "source_frames": 11334,
+          "expected_transitions": 11333,
+          "executed_transitions": 7940,
+          "failed": true,
+          "return": 639.7517931144539,
+          "normalized_return": 0.5645034549993899
+        },
+        {
+          "motion": "pushAndStumble1_subject3",
+          "source_frames": 11334,
+          "expected_transitions": 11333,
+          "executed_transitions": 7613,
+          "failed": true,
+          "return": 617.0479234310333,
+          "normalized_return": 0.5444700404531739
+        },
+        {
+          "motion": "pushAndStumble1_subject5",
+          "source_frames": 11334,
+          "expected_transitions": 11333,
+          "executed_transitions": 7563,
+          "failed": true,
+          "return": 638.5888588777743,
+          "normalized_return": 0.5634773064186305
+        }
+      ]
+    }
+  }
+}

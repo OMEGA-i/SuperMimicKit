@@ -16,7 +16,7 @@
 - [x] 各机器人独立记录 SwanLab 训练指标与完整动作评测。
 - [x] Policy / world model ONNX 导出与 WebGPU demo 集成；MuJoCo 物理使用 WASM。
 - [x] 每 10k iterations 保存配套 policy + world model 权重，包含归一化状态。
-- [x] 发布 LaFAN ONNX 预览：G1 60k policy / 55.5k world、H2 30k、A3 100k。
+- [x] 发布 LaFAN ONNX 预览：G1 55.5k policy / 55.5k world、H2 30k、A3 100k。
 - [x] 公布 G1/H2 train40 / val37 指标；A3 精确 100k 完整评测待补。
 - [ ] **BONES-SEEDs checkpoint**：正在准备重定向流程，后续训练并发布。
 - [ ] **GRAIL checkpoint**：正在处理动作与场景，后续开展包含场景的训练并发布。
@@ -43,13 +43,13 @@ ONNX 每个机器人使用 16 组人工生成的输入验证，只说明这些�
 
 | 机器人 | Policy / world iterations | train40 回报 · 失败 | val37 回报 · 失败 |
 | --- | --- | --- | --- |
-| G1 | **60k / 55.5k**（混合轮次） | 0.7922 · 3/40 | 0.2650 · 32/37 |
+| G1 | **55.5k / 55.5k** | 0.7990 · 3/40 | 0.3103 · 31/37 |
 | H2 | **30k / 30k** | 0.6526 · 6/40 | 0.2600 · 30/37 |
 | A3 | **100k / 100k** | 待补 | 待补 |
 
 G1/H2 使用较早 checkpoint，是因为后期完整动作评测退化：G1 100k 在 train40
 失败 40/40，H2 45k 失败 37/40。根因仍在调查，不能归因于 ONNX 转换。
-H2 使用修正骨盆惯量后重新训练的版本；G1 world 实际为 55.5k，未改标为 60k。
+H2 使用修正骨盆惯量后重新训练的版本；G1 policy 和 world 均使用同次导出的 55.5k。
 
 回报为各动作 `sum(reward)/(0.1*(frames-1))` 的等权平均，提前终止后计零回报；
 不是训练单步回报，也不代表 world model 精度。train40 名单尚未与论文作者确认一致。
@@ -78,7 +78,7 @@ bash scripts/bootstrap_umr.sh
 
 | 数据集 | 处理流程 | 发布计划 |
 | --- | --- | --- |
-| LaFAN | 原始数据 → SMPL-X → UMR → 50 Hz motions | G1 60k/55.5k、H2 30k、A3 100k 预览 |
+| LaFAN | 原始数据 → SMPL-X → UMR → 50 Hz motions | G1 55.5k/55.5k、H2 30k、A3 100k 预览 |
 | BONES-SEEDs | 120 Hz BVH → 内存中 SOMA 解析 / 50 Hz 重采样 → UMR → motions | G1 / H2 / A3 checkpoint，时间待定 |
 | GRAIL | 原始数据 → SMPL-X + scenes → UMR → 配套 motions 与 scenes | G1 / H2 / A3 checkpoint，时间待定 |
 

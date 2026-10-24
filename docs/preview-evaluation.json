@@ -4,16 +4,16 @@
   "results": [
     {
       "robot": "g1",
-      "policy_iterations": 60000,
+      "policy_iterations": 55500,
       "world_iterations": 55500,
       "train40": {
-        "normalized_return": 0.7921827216715038,
+        "normalized_return": 0.7989607743368314,
         "failed_motions": 3,
         "motion_count": 40
       },
       "val37": {
-        "normalized_return": 0.26503891032056776,
-        "failed_motions": 32,
+        "normalized_return": 0.3103218133218674,
+        "failed_motions": 31,
         "motion_count": 37
       }
     },

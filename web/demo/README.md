@@ -42,7 +42,7 @@ and finite values; retarget using the package's matching model. Prepare source d
 according to the [data guide](../../docs/getting_started.md) and its licenses. Do not
 redistribute adapted motions unless your permissions allow it.
 
-G1 uses policy 60k + world 55.5k; H2 uses paired 30k; A3 uses paired 100k. The UI shows
+G1 uses policy 55.5k + world 55.5k; H2 uses paired 30k; A3 uses paired 100k. The UI shows
 both iterations for mixed pairs. Actions are clamped to `[-20,20]` after noise, as
 in training; A3 uses its exported equality constraints without adding duplicates.
 The world visualization resynchronizes to physics every 32 steps.

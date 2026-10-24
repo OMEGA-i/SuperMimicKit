@@ -17,7 +17,7 @@ ONNX Runtime Web / WebGPU. An independent implementation inspired by
 - [x] Independent per-robot SwanLab tracking and full-clip evaluation.
 - [x] ONNX policy / world-model export and WebGPU demo integration; MuJoCo physics runs in WASM.
 - [x] Paired policy + world-model weight archives every 10k iterations, including normalizers.
-- [x] Publish a LaFAN ONNX preview: G1 60k policy / 55.5k world, H2 30k, A3 100k.
+- [x] Publish a LaFAN ONNX preview: G1 55.5k policy / 55.5k world, H2 30k, A3 100k.
 - [x] Report saved G1/H2 train40 / val37 results; exact A3 100k evaluation remains pending.
 - [ ] **BONES-SEEDs checkpoints** — retargeting pipeline preparation is underway; training and release to follow.
 - [ ] **GRAIL checkpoints** — motion/scene processing is underway; scene-aware training and release to follow.
@@ -46,13 +46,13 @@ See [measurement details](docs/performance.md).
 
 | Robot | Policy / world iterations | train40 return · failures | val37 return · failures |
 | --- | --- | --- | --- |
-| G1 | **60k / 55.5k** (mixed) | 0.7922 · 3/40 | 0.2650 · 32/37 |
+| G1 | **55.5k / 55.5k** | 0.7990 · 3/40 | 0.3103 · 31/37 |
 | H2 | **30k / 30k** | 0.6526 · 6/40 | 0.2600 · 30/37 |
 | A3 | **100k / 100k** | Pending | Pending |
 
 G1 and H2 use earlier policies because later full-clip evaluation regressed:
 G1 at 100k failed 40/40 training clips; H2 at 45k failed 37/40. The cause remains
-under investigation. G1's world model is explicitly 55.5k, not 60k.
+under investigation. G1 now uses the original paired 55.5k export for both networks.
 Returns are equally weighted full-clip `sum(reward)/(0.1*(frames-1))`, with zero
 credit after termination. They are not single-step training reward or world-model
 accuracy. Our exact train40 list has not been confirmed against the paper.
@@ -84,7 +84,7 @@ rather than assuming a later iteration is better.
 
 | Dataset | Processing route | Planned release |
 | --- | --- | --- |
-| LaFAN | Source → SMPL-X → UMR → 50 Hz motions | G1 60k/55.5k, H2 30k, A3 100k preview |
+| LaFAN | Source → SMPL-X → UMR → 50 Hz motions | G1 55.5k/55.5k, H2 30k, A3 100k preview |
 | BONES-SEEDs | 120 Hz BVH → in-memory SOMA / 50 Hz resampling → UMR → motions | G1 / H2 / A3 checkpoints; schedule TBD |
 | GRAIL | Source → SMPL-X + scenes → UMR → paired motions and scenes | G1 / H2 / A3 checkpoints; schedule TBD |
 
