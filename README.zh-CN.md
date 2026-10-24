@@ -62,12 +62,15 @@ H2 使用修正骨盆惯量后重新训练的版本；G1 policy 和 world 均使
 ```bash
 git clone --recurse-submodules https://github.com/OMEGA-i/SuperMimicKit.git
 cd SuperMimicKit
+git lfs install
+git lfs pull
 uv venv --python 3.12 .venv
 uv pip install --python .venv/bin/python -e '.[mjwarp,qc,test,tracking,web-refresh]'
 bash scripts/bootstrap_umr.sh
 ```
 
-训练前需准备具有相应使用许可的机器人资产及重定向动作。
+G1、H2、A3 机器人资产已包含在 `assets/robots`，mesh 使用 Git LFS。
+训练前需准备具有相应使用许可的重定向动作。
 参考[安装、数据与训练指南](docs/getting_started.md)、
 [UMR 集成说明](third_party/umr_overlay/README.md)和[浏览器 demo 指南](web/demo/README.md)。
 

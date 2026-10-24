@@ -1,0 +1,199 @@
+{
+  "robot": "a3",
+  "source_xml_sha256": "2265f8a1920e82476aea12530c2f8f1ff73134ce80e1fe2d08111349e65a0a38",
+  "xml_sha256": "797f80caf29970a6d37fc7022f03dd1d78d0d5e8898b37a806e926b2528882e2",
+  "assets": [
+    {
+      "file": "meshes/162899b2ba775cbd.STL",
+      "sha256": "162899b2ba775cbdff24a7ded7908b057aae559326715eae7d6aee220578907f"
+    },
+    {
+      "file": "meshes/b302eca1d9426b8d.STL",
+      "sha256": "b302eca1d9426b8de8ce2e9404389b846183a8c8197da717a6922cb5d86dda94"
+    },
+    {
+      "file": "meshes/447bc2d680ce58b7.STL",
+      "sha256": "447bc2d680ce58b7d5f8ac4cfedaf22538217ffaed3ce28a1a56eb5667225e0e"
+    },
+    {
+      "file": "meshes/aac4aec2ae0db717.STL",
+      "sha256": "aac4aec2ae0db71731d8570c4a62ef1beb3217096533fc5d4caa976617266290"
+    },
+    {
+      "file": "meshes/71088af2d9f92a02.STL",
+      "sha256": "71088af2d9f92a02165512d7949652c7fc35155d2625ac2fa82d0d5b389535e1"
+    },
+    {
+      "file": "meshes/f895a472b6a33e07.STL",
+      "sha256": "f895a472b6a33e0742d66c585ab6360baef96504b2522ce4b9598fbf4b8f2a02"
+    },
+    {
+      "file": "meshes/f0a3259568522b89.STL",
+      "sha256": "f0a3259568522b89f7e7145a9d8a566c958c69a07023e0d10845a0118c450385"
+    },
+    {
+      "file": "meshes/5f23bb1a26e74367.STL",
+      "sha256": "5f23bb1a26e7436753dd5cf8b410efb67443d9e68998b6f124d06404eb20d0f8"
+    },
+    {
+      "file": "meshes/cfbd0aff0a2a2606.STL",
+      "sha256": "cfbd0aff0a2a2606ff5d76f295d21deb4c59ed2bb7773c2a20c73cd50382e7a5"
+    },
+    {
+      "file": "meshes/8f4d5afb87e7e99b.STL",
+      "sha256": "8f4d5afb87e7e99bf514e2f29e9b5505361d2d1796eccad85fd4b03f642c18d4"
+    },
+    {
+      "file": "meshes/d3747ec7eb12b516.STL",
+      "sha256": "d3747ec7eb12b516cc32253e1a464546eabf6907aefa701375c86ad1e3baedb8"
+    },
+    {
+      "file": "meshes/61b9ca8581fbbc97.STL",
+      "sha256": "61b9ca8581fbbc97d4f654c4d09548be92c46022d72fdfb2075b83619845a012"
+    },
+    {
+      "file": "meshes/408a268c8db30154.STL",
+      "sha256": "408a268c8db30154f4ccbe739cc8e1baba1cf1f2d1cfae2d22d4a9e25e193ecb"
+    },
+    {
+      "file": "meshes/eb0ecf59d6636f29.STL",
+      "sha256": "eb0ecf59d6636f29245df24c561c16c4226712b05538adbab7b247186a07c594"
+    },
+    {
+      "file": "meshes/e6b69e3eb9bb7f14.STL",
+      "sha256": "e6b69e3eb9bb7f14c55568cabf6be8d4ca883afed143774aed626089b8e6919d"
+    },
+    {
+      "file": "meshes/3e2d7b0d1b08d47f.STL",
+      "sha256": "3e2d7b0d1b08d47fd27b5fa7949967b62420b7dd4820f94d9e5b4685adf6aad2"
+    },
+    {
+      "file": "meshes/00d0d7e5875f4bb9.STL",
+      "sha256": "00d0d7e5875f4bb95a4f8898aa7bbbd9fa5efe72f3024bf1ccf363363486937b"
+    },
+    {
+      "file": "meshes/e6942f99c627322b.STL",
+      "sha256": "e6942f99c627322b791f5f718c9be90e28d1f7892585cab69f71e856fa1cbec2"
+    },
+    {
+      "file": "meshes/f3d0de35358f1d12.STL",
+      "sha256": "f3d0de35358f1d12220e34796688a4b3298b78100214036928f04aa0ccfa3d34"
+    },
+    {
+      "file": "meshes/9f93d63f2e52338a.STL",
+      "sha256": "9f93d63f2e52338a130394d10a4283eaf05b9ba887a7e016499432fff05e1b51"
+    },
+    {
+      "file": "meshes/5a510f657a264c7f.STL",
+      "sha256": "5a510f657a264c7f3a876ba84a9f4e3b65e7fc4a1feec2bee5fab299232e1ed3"
+    },
+    {
+      "file": "meshes/fef914302ca535f9.STL",
+      "sha256": "fef914302ca535f9ec32e45089111b55b8cacdc50ffd3d12cbd54d501c234037"
+    },
+    {
+      "file": "meshes/1b96ef7f1618fd75.STL",
+      "sha256": "1b96ef7f1618fd7565c7e0f9beeef2e56efe30d078837f89aae68dbb94c24bf6"
+    },
+    {
+      "file": "meshes/908671221234d62b.STL",
+      "sha256": "908671221234d62b04c884218b9c88503572b6a0342fd5fba594bd9a990b81b0"
+    },
+    {
+      "file": "meshes/abc3fda9643325e5.STL",
+      "sha256": "abc3fda9643325e551b85007d0f3072c4299b2d3874504b6594ae601ad52ff80"
+    },
+    {
+      "file": "meshes/fd4118aadb5349e6.STL",
+      "sha256": "fd4118aadb5349e673158bb567411623594a4a0aad5e45f6fe7a282ad84657f3"
+    },
+    {
+      "file": "meshes/a1fb76dae3648f88.STL",
+      "sha256": "a1fb76dae3648f88f9faccc481ca9fafbee92fef68ca1afae0863c93fdad5711"
+    },
+    {
+      "file": "meshes/614fce16f3b1b4cb.STL",
+      "sha256": "614fce16f3b1b4cb6937d0dc3370cbe08aa9427b1fef81fcca3a0305236b3e79"
+    },
+    {
+      "file": "meshes/5a44c5cff46a8eee.STL",
+      "sha256": "5a44c5cff46a8eee52b67eccbe50fdfdb153d5fdcb753b20f29ec80b70f52702"
+    },
+    {
+      "file": "meshes/63f10d761fa8752b.STL",
+      "sha256": "63f10d761fa8752bcf4054afd7f250b05b6345d4d2030570fcb8cff6750566a3"
+    },
+    {
+      "file": "meshes/c9050125b942b942.STL",
+      "sha256": "c9050125b942b942448e085126bae2c55ff0ae7bf45b40a9b5156c6f876f4c67"
+    },
+    {
+      "file": "meshes/80e37cb823d703e3.STL",
+      "sha256": "80e37cb823d703e36b584325e842e501110aa2c6b2d83eaad865d6a0b6a95770"
+    },
+    {
+      "file": "meshes/95bfec02589a4c0a.STL",
+      "sha256": "95bfec02589a4c0a4a30acaed653edd6f4fa6e038768327419560a0c19440a69"
+    },
+    {
+      "file": "meshes/47dfd37c80c8a898.STL",
+      "sha256": "47dfd37c80c8a898989f3ed699198518c9969b898d6344b59e34909e40676b78"
+    },
+    {
+      "file": "meshes/5b97fae6df26f031.STL",
+      "sha256": "5b97fae6df26f0312cf004693447ec59e3a2adbd64729dc5d776fd11b28d8d9b"
+    },
+    {
+      "file": "meshes/95c79979b7a59ae2.STL",
+      "sha256": "95c79979b7a59ae28c202595e78c54fd2dddf4ae4bd4e2b1a4698edeb31505ae"
+    },
+    {
+      "file": "meshes/a38730630346bd78.STL",
+      "sha256": "a38730630346bd7824f601eebb786040662d4d7e56dbb2276c97b3c8a12ee8d3"
+    },
+    {
+      "file": "meshes/6e50c44846fa9a5d.STL",
+      "sha256": "6e50c44846fa9a5d3f4a5ca97d7f209e2fea3e852fcc33685ff4653d3d865444"
+    },
+    {
+      "file": "meshes/52b5a191e5d75368.STL",
+      "sha256": "52b5a191e5d753687dc1b4f455d5b8ab89d10a36a4d03a5dfc14f17af5060421"
+    },
+    {
+      "file": "meshes/e89922f499d521eb.STL",
+      "sha256": "e89922f499d521eb761437c794f69fbe288b7cdc81bbad25456b26d178f23138"
+    },
+    {
+      "file": "meshes/95bfec02589a4c0a.STL",
+      "sha256": "95bfec02589a4c0a4a30acaed653edd6f4fa6e038768327419560a0c19440a69"
+    }
+  ],
+  "validated_arrays": [
+    "qpos0",
+    "body_mass",
+    "body_inertia",
+    "body_pos",
+    "body_quat",
+    "body_ipos",
+    "body_iquat",
+    "jnt_type",
+    "jnt_axis",
+    "jnt_pos",
+    "jnt_range",
+    "dof_armature",
+    "geom_type",
+    "geom_size",
+    "geom_pos",
+    "geom_quat",
+    "geom_contype",
+    "geom_conaffinity",
+    "mesh_vert",
+    "mesh_face",
+    "eq_data",
+    "eq_obj1id",
+    "eq_obj2id",
+    "actuator_gear"
+  ],
+  "nq": 38,
+  "nv": 37
+}

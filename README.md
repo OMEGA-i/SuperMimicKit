@@ -66,12 +66,15 @@ before running the browser demo. These are experimental previews, not deployment
 ```bash
 git clone --recurse-submodules https://github.com/OMEGA-i/SuperMimicKit.git
 cd SuperMimicKit
+git lfs install
+git lfs pull
 uv venv --python 3.12 .venv
 uv pip install --python .venv/bin/python -e '.[mjwarp,qc,test,tracking,web-refresh]'
 bash scripts/bootstrap_umr.sh
 ```
 
-Prepare licensed robot assets and retargeted motions before training.
+G1, H2 and A3 robot assets are included in `assets/robots`; meshes use Git LFS.
+Prepare licensed retargeted motions before training.
 See the [setup, data and training guide](docs/getting_started.md),
 [UMR integration notes](third_party/umr_overlay/README.md) and
 [browser demo guide](web/demo/README.md).

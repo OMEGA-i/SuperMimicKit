@@ -11,6 +11,10 @@ The existing UMR floating-root MJCF is retained.
 
 ## Storage
 
-Runtime package: `$SUPERMIMIC_ROBOT_ASSETS/g1/robot.xml`, with relative `meshes/` and `textures/` dependencies. Default root: `assets/robots`.
+The canonical `robot.xml` and relative `meshes/` dependencies are included here.
+Mesh and texture files use Git LFS; XML, provenance and license files use ordinary Git.
+Run `git lfs install` and `git lfs pull` after cloning.
 
-`provenance.json` records source XML, input/output hashes, copied asset hashes and numerical model-equivalence validation. Packaging only relocates paths; it does not change physical parameters. Bulk assets are stored on persistent storage, not duplicated into Git. This README is copied into each runtime package.
+`provenance.json` records XML and mesh SHA-256 values and the original packaging
+validation. Historical machine paths are omitted from this public manifest.
+See `source_LICENSE` for the model license.

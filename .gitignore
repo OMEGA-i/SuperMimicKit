@@ -16,7 +16,3 @@ node_modules/
 web/demo/dist/assets/
 web/demo/dist/vendor/
 web/demo/assets.lock.json
-assets/robots/*/meshes/
-assets/robots/*/textures/
-assets/robots/*/robot.xml
-assets/robots/*/provenance.json
