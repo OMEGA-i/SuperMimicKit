@@ -13,10 +13,10 @@ npm run prepare:vendor
 From the repository root, inspect the export commands:
 
 ```bash
-python -m scripts.export_web_demo --help
-python -m scripts.export_web_onnx --help
-python -m scripts.export_web_motions --help
-python -m scripts.serve_web_demo --help
+.venv/bin/python -m scripts.export_web_demo --help
+.venv/bin/python -m scripts.export_web_onnx --help
+.venv/bin/python -m scripts.export_web_motions --help
+.venv/bin/python -m scripts.serve_web_demo --help
 ```
 
 Download the three robot ZIPs from the [preview release](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/demo-preview-20261024)
@@ -43,8 +43,8 @@ according to the [data guide](../../docs/getting_started.md) and its licenses. D
 redistribute adapted motions unless your permissions allow it.
 
 G1 uses policy 55.5k + world 55.5k; H2 uses paired 30k; A3 uses paired 100k. The UI shows
-both iterations for mixed pairs. Actions are clamped to `[-20,20]` after noise, as
-in training; A3 uses its exported equality constraints without adding duplicates.
+both iteration fields; the published preview uses matched pairs. Actions are
+clamped to `[-20,20]` after noise, as in training; A3 uses its exported equality constraints without adding duplicates.
 The world visualization resynchronizes to physics every 32 steps.
 
 For an offline smoke test after installing web dependencies:

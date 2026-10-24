@@ -12,7 +12,7 @@ license. It contains no optimizer, replay buffer, raw training checkpoint or mot
 | A3 | 100,000 | 100,000 | Pending | Pending | Pending | Pending |
 
 The return/failure rows measure the **policy in MuJoCo**, not world-model prediction
-quality. G1 now uses the original paired 55.5k policy/world export. A3's exact 100k full-clip results have not been verified for this release.
+quality. G1 uses the original paired 55.5k policy/world export. A3's exact 100k full-clip results have not been verified for this release.
 
 ## Why G1 and H2 are not 100k
 
@@ -39,7 +39,9 @@ remaining frames receive zero reward. Per-clip normalized return is
 returns. Failure means an early terminal, not merely a low instantaneous reward.
 Train40 and held-out val37 are separate sets. Our exact training list has not
 been confirmed to match the paper's 40 clips. These figures are not live
-single-step training reward. See `preview-evaluation.json` for the saved summary.
+single-step training reward. See the [saved evaluation summary](preview-evaluation.json) and
+[G1 55.5k per-motion results](preview-evaluation-g1-55500.json).
+The CLI calls the validation split `test37`; reports label it `val37`.
 
 ## Run locally
 
@@ -71,4 +73,4 @@ licenses/notices. See `ROBOT_SOURCE.md` inside each archive for modifications.
   not an indefinitely open-loop prediction. No real-time performance claim.
 - Generalization remains limited, as the val37 failure counts show.
 
-BONES-SEEDs and GRAIL checkpoints remain planned; neither is included in this release.
+BONES-SEED and GRAIL checkpoints remain planned; neither is included in this release.

@@ -5,20 +5,27 @@
 ## Installation
 
 Linux with an NVIDIA GPU is the training target. Create a separate environment
-for training and UMR; their dependency versions differ.
+for training, UMR and SOMA Retargeter; their dependency versions differ.
+Install Git LFS and uv before the commands below.
 
 ```bash
+git lfs install
 git clone --recurse-submodules https://github.com/OMEGA-i/SuperMimicKit.git
 cd SuperMimicKit
+git lfs pull
+git -C third_party/soma-retargeter lfs pull
 uv venv --python 3.12 .venv
 uv pip install --python .venv/bin/python -e '.[mjwarp,qc,test,tracking,web-refresh]'
-python3 scripts/apply_umr_overlay.py
-bash scripts/bootstrap_umr.sh
 ```
 
-The UMR submodule is a public pinned snapshot. The checked-in integration overlay
-adds A3 support and fixes used by this toolkit; see
-[its provenance and setup notes](../third_party/umr_overlay/README.md).
+For an existing checkout, run `git submodule update --init --recursive`, then
+the two LFS pull commands above.
+
+For the LaFAN / GRAIL UMR route, run `bash scripts/bootstrap_umr.sh` once to
+create `.venv-umr`; it also applies the integration overlay. See
+[the overlay notes](../third_party/umr_overlay/README.md). For SOMA BVH, follow
+[SOMA Retargeter installation](../third_party/soma-retargeter/documentation/installation.md)
+in its own environment. Adding the submodule does not install its dependencies.
 An Isaac Sim / PhysX backend is also present, but needs a separately installed
 Isaac Lab environment. MuJoCo Warp is the primary training path.
 
@@ -33,12 +40,16 @@ assets/robots/
 └── a3/{robot.xml,meshes,README.md,provenance.json}
 ```
 
-Only source documentation is included here. Obtain model files from their
-respective upstream sources and honor their licenses. G1/H2 assets are provided
-by UMR; A3 can be fetched with `python scripts/fetch_a3_assets.py --help`.
-`package_robot_assets.py` packages an already prepared floating-base MJCF,
-rewrites mesh paths and verifies model equivalence. Do not substitute a model
-with different joint order or inertia when resuming a checkpoint.
+All three packages are included: XML and provenance use ordinary Git, while
+meshes use Git LFS. Each package retains source documentation and its model
+license; A3 also includes its upstream notice. Run `git lfs pull` if mesh files
+are still small text pointers.
+
+`package_robot_assets.py` is for packaging additional prepared floating-base
+MJCFs; it is not required to download these models. Do not substitute a model
+with different joint order or inertia when resuming a checkpoint. SOMA
+Retargeter has its own bundled robot variants; those are not automatically
+interchangeable with the canonical training models here.
 
 Set `SUPERMIMIC_G1_MJCF`, `SUPERMIMIC_H2_MJCF` or `SUPERMIMIC_A3_MJCF`
 to the corresponding absolute `robot.xml` path. Launcher scripts derive these
@@ -47,22 +58,25 @@ See the per-robot README files and [control sources](control_sources.json).
 
 ## Data and retargeting
 
-Datasets and licensed SMPL-X / SOMA assets are not distributed in this repository.
-Use the relevant dataset's access and license requirements.
+Full source datasets and separately licensed body-model weights are not
+distributed by this toolkit. Submodules may include separately licensed sample
+data; consult their notices. Obtain the required data under its own terms.
 
 ```text
 datasets/
 ├── lafan/{source,smplx,umr,motions,splits,manifest.json}
 ├── grail/{source,smplx,umr,motions,scenes,manifest.json}
-└── bones-seed/{source,umr,motions,manifest.json}
+└── bones-seed/{source,soma-retargeter,motions,manifest.json}
 ```
 
 LaFAN follows source → SMPL-X → UMR → named 50 Hz motion arrays. BONES-SEED
-uses BVH → in-memory SOMA parsing / 50 Hz resampling → UMR → motions.
-GRAIL motion and scene outputs must remain paired. The data adapters and their
-limitations are described in the UMR overlay README.
+uses the planned SOMA BVH → 50 Hz resampling → SOMA Retargeter → training-format
+motions route. The upstream submodule outputs CSV, not SuperMimicKit
+`motion.npz`; the public end-to-end adapter is not yet included. Do not feed
+its CSV directly to the trainer. Older UMR BONES adapters remain in the overlay
+as legacy utilities. GRAIL motion and scene outputs must remain paired.
 
-Useful entrypoints:
+LaFAN / UMR entrypoints:
 
 ```bash
 .venv/bin/python scripts/fetch_lafan.py --help
@@ -97,11 +111,22 @@ Do not equate an iteration count or short numerical test with convergence.
 
 ```bash
 .venv/bin/python -m scripts.evaluate_full_motions \
-  --checkpoint outputs/g1_lafan/last.pt \
+  --checkpoint outputs/g1_lafan/ckpt_30000.pt \
   --motions datasets/lafan/motions/g1 \
-  --manifest datasets/lafan/manifest.json --motion-split all77 \
-  --device cuda:0 --output outputs/g1_lafan/evaluation
+  --manifest datasets/lafan/manifest.json --motion-split train40 \
+  --device cuda:0 --output outputs/g1_lafan/eval_train40
+
+.venv/bin/python -m scripts.evaluate_full_motions \
+  --checkpoint outputs/g1_lafan/ckpt_30000.pt \
+  --motions datasets/lafan/motions/g1 \
+  --manifest datasets/lafan/manifest.json --motion-split test37 \
+  --device cuda:0 --output outputs/g1_lafan/eval_val37
 ```
+
+Replace `ckpt_30000.pt` with an actual saved snapshot from your run, and use
+that same snapshot for both evaluations. The CLI name `test37`
+is the split reported as `val37` in tables and dashboards. Each output directory
+must be new; `results.json` contains the per-clip results and protocol.
 
 Evaluation starts each clip at frame zero, disables noise/randomization, and
 ends on the first terminal event. Per-clip normalized return is
@@ -115,15 +140,17 @@ Set `project`, `workspace`, `experiment_name` and `experiment_id` in your local
 configuration, with credentials supplied locally. No account credentials are
 included. The checkpoint capture helper can retain evaluation weights every
 500 updates and paired policy + world-model archives (`ckpt_<iteration>.pt`) every 10k updates.
-For an already-running trainer, run the capture helper with `--every 10000
---include-world`; it uses CPU mmap and does not require a training restart.
+For an already-running trainer, run `scripts.capture_eval_checkpoint` with
+`--every 10000 --include-world`; it uses CPU mmap and does not require a training restart.
 
 ## Checkpoint exports
 
 Complete demo bundles require policy and world-model weights from the same
 checkpoint, plus compatible assets, metadata and motions. Policy-only exports
-cannot replace a full demo bundle. A complete 100k demo release is planned once all three embodiments reach
-100,000 iterations; no complete pretrained demo bundle is currently published.
+cannot replace both networks. The [published preview](preview-release.md) uses
+paired G1 55.5k, H2 30k and A3 100k networks. It includes robot assets but no
+motion references. Later iterations are not automatically better; see the
+release evaluation and limitations.
 
 Use `scripts/capture_demo_checkpoint.py` to preserve both networks from a full
 training checkpoint using CPU only, without copying replay or optimizer state.
@@ -135,5 +162,6 @@ is explicitly wanted.
 [Demo setup](../web/demo/README.md). Policy and world-model networks use ONNX Runtime
 Web on WebGPU; MuJoCo physics uses WASM. WebGPU needs a secure browser context
 (HTTPS or localhost). Export your own compatible checkpoint and motions; the
-repository does not include a deployed public demo; a complete demo requires a matching world model as well as the policy.
+repository does not include a deployed public demo. The preview can be run
+locally after supplying compatible, licensed motion references.
 

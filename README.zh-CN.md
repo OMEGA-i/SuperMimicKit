@@ -4,22 +4,23 @@
 
 [English](README.md) · 简体中文
 
-基于 PyTorch + MuJoCo Warp 训练，使用 UMR 重定向，通过 ONNX Runtime Web / WebGPU
+基于 PyTorch + MuJoCo Warp 训练，使用 UMR / SOMA Retargeter 重定向，通过 ONNX Runtime Web / WebGPU
 运行浏览器 demo。独立实现，参考 [SuperMimic](https://supermimic.github.io/)
 与 [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed)。
 
 ## 项目进展
 
-- [x] G1 / H2 / A3 配置与统一机器人资产目录。
+- [x] G1 / H2 / A3 配置与 Git LFS 管理的统一机器人资产。
 - [x] LaFAN 重定向，以及明确的 train40 / 独立 val37 划分。
 - [x] FP32 训练，可选 TF32 / BF16，支持编译与 CUDA graphs。
 - [x] 各机器人独立记录 SwanLab 训练指标与完整动作评测。
 - [x] Policy / world model ONNX 导出与 WebGPU demo 集成；MuJoCo 物理使用 WASM。
 - [x] 每 10k iterations 保存配套 policy + world model 权重，包含归一化状态。
 - [x] 发布 LaFAN ONNX 预览：G1 55.5k policy / 55.5k world、H2 30k、A3 100k。
-- [x] 公布 G1/H2 train40 / val37 指标；A3 精确 100k 完整评测待补。
-- [ ] **BONES-SEEDs checkpoint**：正在准备重定向流程，后续训练并发布。
-- [ ] **GRAIL checkpoint**：正在处理动作与场景，后续开展包含场景的训练并发布。
+- [x] 公布 G1/H2 train40 / val37 指标。
+- [ ] 核验并公布 A3 精确 100k 完整动作评测。
+- [ ] **BONES-SEED checkpoint**：SOMA Retargeter 集成、训练与发布。
+- [ ] **GRAIL checkpoint**：动作与场景验证、包含场景的训练与发布。
 
 ## 性能报告
 
@@ -29,12 +30,10 @@
 | --- | --- | --- |
 | G1 训练吞吐 | **2.18 iterations/s** · 0.459 s/iteration | H100，4,096 envs，TF32，compile + CUDA graphs |
 | GPU 利用率 | **84.7%** | 同一短跑测试，33 次 GPU 采样 |
-| G1 policy ONNX 最大绝对误差 | **2.63 × 10⁻⁶** | 精确 50k policy，FP32 PyTorch 对比 ONNX Runtime CPU |
-| A3 policy ONNX 最大绝对误差 | **4.06 × 10⁻⁶** | 精确 50k policy，FP32 PyTorch 对比 ONNX Runtime CPU |
 
 吞吐为 36 个测量 iteration 的均值，不含初始编译时间；不等于训练全程耗时或浏览器速度。
-ONNX 每个机器人使用 16 组人工生成的输入验证，只说明这些输入下的数值一致性，
-不代表运动质量或完整 world model 的一致性。详见[测量说明](docs/performance.md)。
+历史 50k ONNX 数值验证单独记录在[测量说明](docs/performance.md)，
+不代表下方预览 checkpoint 的验证结果。
 
 ## 预训练模型预览
 
@@ -60,42 +59,41 @@ H2 使用修正骨盆惯量后重新训练的版本；G1 policy 和 world 均使
 ## 快速开始
 
 ```bash
+git lfs install
 git clone --recurse-submodules https://github.com/OMEGA-i/SuperMimicKit.git
 cd SuperMimicKit
-git lfs install
 git lfs pull
 git -C third_party/soma-retargeter lfs pull
 uv venv --python 3.12 .venv
 uv pip install --python .venv/bin/python -e '.[mjwarp,qc,test,tracking,web-refresh]'
-bash scripts/bootstrap_umr.sh
 ```
 
 G1、H2、A3 机器人资产已包含在 `assets/robots`，mesh 使用 Git LFS。
 训练前需准备具有相应使用许可的重定向动作。
 原版 [SOMA Retargeter](https://github.com/NVIDIA/soma-retargeter) 以固定版本子模块存放在
-`third_party/soma-retargeter`，安装和使用方法见其 README。已有仓库执行
-`git submodule update --init third_party/soma-retargeter` 即可拉取。
+`third_party/soma-retargeter`。按需为各重定向工具安装独立环境，方法见下方指南。
 参考[安装、数据与训练指南](docs/getting_started.md)、
 [UMR 集成说明](third_party/umr_overlay/README.md)和[浏览器 demo 指南](web/demo/README.md)。
 
-## Checkpoint 与后续数据集
+## 数据集计划
 
-首个[公开预览版](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/demo-preview-20261024)
-使用上表中的 checkpoint。后续版本以已验证的质量为依据，不默认轮次越高越好。
+后续版本以已验证的跟踪质量为依据，不默认轮次越高越好。
 
 | 数据集 | 处理流程 | 发布计划 |
 | --- | --- | --- |
 | LaFAN | 原始数据 → SMPL-X → UMR → 50 Hz motions | G1 55.5k/55.5k、H2 30k、A3 100k 预览 |
-| BONES-SEEDs | 120 Hz BVH → 内存中 SOMA 解析 / 50 Hz 重采样 → UMR → motions | G1 / H2 / A3 checkpoint，时间待定 |
+| BONES-SEED | 120 Hz SOMA BVH → 50 Hz 重采样 → SOMA Retargeter → 训练格式动作 | G1 / H2 / A3 checkpoint，时间待定 |
 | GRAIL | 原始数据 → SMPL-X + scenes → UMR → 配套 motions 与 scenes | G1 / H2 / A3 checkpoint，时间待定 |
 
-BONES-SEEDs 不额外落盘一份 SOMA 数据。GRAIL 场景始终与重定向动作配套。
+BONES-SEED 流程不额外落盘一份完整 SOMA 数据。公开仓库已包含上游子模块，
+端到端训练格式适配器尚未包含。GRAIL 场景始终与重定向动作配套。
 数据集和模型的再分发遵循各自许可。
 
 ## 致谢
 
 感谢 [SuperMimic 作者](https://supermimic.github.io/)、
 [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed)、
-[UMR](https://github.com/hanyang9/UMR) 及机器人与数据集贡献者。
+[UMR](https://github.com/hanyang9/UMR)、
+[SOMA Retargeter](https://github.com/NVIDIA/soma-retargeter) 及机器人与数据集贡献者。
 本项目使用的 UMR fork 为 [OMEGA-i/UMR](https://github.com/OMEGA-i/UMR)。
 第三方代码、模型和数据集保留各自许可证及声明。

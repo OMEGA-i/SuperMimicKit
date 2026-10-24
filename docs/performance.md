@@ -22,13 +22,22 @@ concurrent workloads and long-run behavior can change throughput.
 
 Exact 50k G1 and A3 policy weights were exported in FP32 and checked using
 ONNX Runtime CPU against PyTorch over 16 synthetic fixtures each.
+
+| Policy | Iterations | Max absolute error |
+| --- | ---: | ---: |
+| G1 | 50,000 | 2.63 × 10⁻⁶ |
+| A3 | 50,000 | 4.06 × 10⁻⁶ |
+
 Reported errors are rounded upward. These artifacts were policy-only;
 this check does not validate a full demo, world model, WebGPU execution,
-or motion-tracking quality. The public complete release target is 100k.
+or motion-tracking quality. These historical policy-only checks are separate
+from the [current paired-network preview](preview-release.md).
 
 精确 50k policy 的数值验证不代表完整 demo、world model、WebGPU 或动作跟踪评测。
-完整公开版本仍以 100k 为目标。
+这些历史 policy-only 测量与[当前配套双网络预览](preview-release.md)分开记录。
 
 The sanitized [measurement record](performance.json) contains settings and
 numerical results, without deployment paths or private training artifacts.
-100k train40 / val37 normalized returns, failure counts and videos remain TODO.
+Current G1/H2 full-clip returns and failure counts are in the preview notes.
+Exact A3 100k full-clip results remain pending; no historical metric is relabeled
+as a result for another checkpoint.

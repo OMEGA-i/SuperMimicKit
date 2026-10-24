@@ -27,8 +27,9 @@ results as equivalent without measuring the difference.
 
 ## Current limits
 
-Complete checkpoint bundles are being prepared for GitHub Releases.
-Source motion datasets and deployment logs are not included. Selected development
-measurements are documented in [performance notes](performance.md); matched 100k
-tracking results remain pending. Unit tests verify targeted contracts, not
+The [published preview](preview-release.md) contains paired FP32 ONNX networks
+for G1 55.5k, H2 30k and A3 100k. G1/H2 full-clip results are reported; exact
+A3 100k results remain unverified in that release. Source motion datasets and
+deployment logs are not included. Historical development benchmarks are in
+[performance notes](performance.md). Unit tests verify targeted contracts, not
 locomotion stability.

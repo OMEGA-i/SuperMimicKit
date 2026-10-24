@@ -17,8 +17,10 @@ to positive integer shard weights), `UMR_LOCK_DIR` and
 `SUPERMIMIC_ROBOT_ASSETS`. Defaults are one node named `local`, `/tmp`, and the
 project's `assets/robots`. Keep node assignments fixed while resuming a dataset.
 GRAIL's `--preprocessor` is an explicit external resampler dependency; it must
-synchronize human and object trajectories at 30 Hz. BONES reads BVH and
-resamples to 50 Hz in memory, without storing a duplicate SOMA dataset.
+synchronize human and object trajectories at 30 Hz. The legacy BONES adapter
+reads BVH and resamples to 50 Hz in memory. The current BONES-SEED direction
+uses the separate `third_party/soma-retargeter` upstream submodule; this overlay
+is not its integration layer. See the [data guide](../../docs/getting_started.md).
 
 UMR-derived code is under the included upstream MIT license. Robot asset and
 source dataset terms remain separate. No source motion datasets, licensed body
