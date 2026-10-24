@@ -1,0 +1,45 @@
+{
+  "release": "demo-preview-20261024",
+  "scope": "saved policy full-clip evaluations; not world-model quality",
+  "results": [
+    {
+      "robot": "g1",
+      "policy_iterations": 60000,
+      "world_iterations": 55500,
+      "train40": {
+        "normalized_return": 0.7921827216715038,
+        "failed_motions": 3,
+        "motion_count": 40
+      },
+      "val37": {
+        "normalized_return": 0.26503891032056776,
+        "failed_motions": 32,
+        "motion_count": 37
+      }
+    },
+    {
+      "robot": "h2",
+      "policy_iterations": 30000,
+      "world_iterations": 30000,
+      "train40": {
+        "normalized_return": 0.6525546864778408,
+        "failed_motions": 6,
+        "motion_count": 40
+      },
+      "val37": {
+        "normalized_return": 0.25999722373515777,
+        "failed_motions": 30,
+        "motion_count": 37
+      }
+    },
+    {
+      "robot": "a3",
+      "policy_iterations": 100000,
+      "world_iterations": 100000,
+      "train40": null,
+      "val37": null,
+      "status": "exact-100k full-clip results pending"
+    }
+  ],
+  "protocol": "preview-release.md"
+}

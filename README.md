@@ -17,8 +17,8 @@ ONNX Runtime Web / WebGPU. An independent implementation inspired by
 - [x] Independent per-robot SwanLab tracking and full-clip evaluation.
 - [x] ONNX policy / world-model export and WebGPU demo integration; MuJoCo physics runs in WASM.
 - [x] Paired policy + world-model weight archives every 10k iterations, including normalizers.
-- [ ] Publish complete **LaFAN 100k** demo checkpoints for G1 / H2 / A3.
-- [ ] Publish matching train40 / val37 results and rollout videos for those checkpoints.
+- [x] Publish a LaFAN ONNX preview: G1 60k policy / 55.5k world, H2 30k, A3 100k.
+- [x] Report saved G1/H2 train40 / val37 results; exact A3 100k evaluation remains pending.
 - [ ] **BONES-SEEDs checkpoints** — retargeting pipeline preparation is underway; training and release to follow.
 - [ ] **GRAIL checkpoints** — motion/scene processing is underway; scene-aware training and release to follow.
 
@@ -39,13 +39,27 @@ ONNX checks use 16 synthetic input fixtures per robot; they establish numerical
 parity on those inputs, not locomotion quality or full world-model parity.
 See [measurement details](docs/performance.md).
 
-**100k tracking quality: pending.** We will report full-clip normalized return
-and failed-motion counts separately for train40 and val37, for each robot.
-Normalized return is `sum(reward) / (0.1 × (frames − 1))`, averaged equally over
-clips; the remainder after early termination receives zero credit. A failed
-motion triggers early termination. Live per-step training reward is a different
-metric. Our exact 40-clip list has not been confirmed against the authors' list;
-see [evaluation scope](docs/reproduction_scope.md).
+## Pretrained preview
+
+[Download the preview](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/demo-preview-20261024)
+· [Selection, evaluation and limitations](docs/preview-release.md)
+
+| Robot | Policy / world iterations | train40 return · failures | val37 return · failures |
+| --- | --- | --- | --- |
+| G1 | **60k / 55.5k** (mixed) | 0.7922 · 3/40 | 0.2650 · 32/37 |
+| H2 | **30k / 30k** | 0.6526 · 6/40 | 0.2600 · 30/37 |
+| A3 | **100k / 100k** | Pending | Pending |
+
+G1 and H2 use earlier policies because later full-clip evaluation regressed:
+G1 at 100k failed 40/40 training clips; H2 at 45k failed 37/40. The cause remains
+under investigation. G1's world model is explicitly 55.5k, not 60k.
+Returns are equally weighted full-clip `sum(reward)/(0.1*(frames-1))`, with zero
+credit after termination. They are not single-step training reward or world-model
+accuracy. Our exact train40 list has not been confirmed against the paper.
+
+Bundles contain FP32 ONNX networks, metadata and robot assets. **Motion data is
+not included** due to source redistribution restrictions; supply licensed motions
+before running the browser demo. These are experimental previews, not deployment-ready controllers.
 
 ## Get started
 
@@ -64,14 +78,13 @@ See the [setup, data and training guide](docs/getting_started.md),
 
 ## Checkpoints and upcoming datasets
 
-The next public release targets **100k iterations** for G1, H2 and A3. Each demo
-bundle needs policy and world-model ONNX from the same checkpoint, compatible
-metadata and robot assets. No complete pretrained demo bundle is published yet.
-Follow [GitHub Releases](https://github.com/OMEGA-i/SuperMimicKit/releases).
+The first [public preview](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/demo-preview-20261024)
+uses the checkpoints listed above. Future releases will follow validated quality
+rather than assuming a later iteration is better.
 
 | Dataset | Processing route | Planned release |
 | --- | --- | --- |
-| LaFAN | Source → SMPL-X → UMR → 50 Hz motions | G1 / H2 / A3 at 100k |
+| LaFAN | Source → SMPL-X → UMR → 50 Hz motions | G1 60k/55.5k, H2 30k, A3 100k preview |
 | BONES-SEEDs | 120 Hz BVH → in-memory SOMA / 50 Hz resampling → UMR → motions | G1 / H2 / A3 checkpoints; schedule TBD |
 | GRAIL | Source → SMPL-X + scenes → UMR → paired motions and scenes | G1 / H2 / A3 checkpoints; schedule TBD |
 

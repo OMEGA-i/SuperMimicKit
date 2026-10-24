@@ -2,7 +2,7 @@
 import fs from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import path from 'node:path';
-import {Network,observation,goalFeatures,fkState} from '../web/demo/dist/inference.js';
+import {Network,observation,goalFeatures,fkState} from '../web/demo/dist/inference-onnx.js';
 const root=path.resolve(process.argv[2]);
 globalThis.fetch=async url=>new Response(await fs.readFile(new URL(url)));
 const m=JSON.parse(await fs.readFile(process.argv[3]||path.join(root,'metadata.json'))),f=JSON.parse(await fs.readFile(path.join(root,m.inference_fixture)));

@@ -1,0 +1,34 @@
+[
+  {
+    "adapter": "WebGPU",
+    "backend": "webgpu",
+    "cpu_fallback": false
+  },
+  {
+    "robot": "g1",
+    "iteration": 60000,
+    "status": "passed",
+    "action_error": 0.0000017881393432617188,
+    "world_error": 0.0000705718994140625,
+    "rollout32_max_abs": 0.00015878677368164062,
+    "elapsed_ms": 932
+  },
+  {
+    "robot": "h2",
+    "iteration": 30000,
+    "status": "passed",
+    "action_error": 0.0000026226043701171875,
+    "world_error": 0.00000858306884765625,
+    "rollout32_max_abs": 0.00002276897430419922,
+    "elapsed_ms": 767.5999999046326
+  },
+  {
+    "robot": "a3",
+    "iteration": 100000,
+    "status": "passed",
+    "action_error": 0.000004291534423828125,
+    "world_error": 0.000034332275390625,
+    "rollout32_max_abs": 0.0000852346420288086,
+    "elapsed_ms": 615.7999997138977
+  }
+]

@@ -16,8 +16,8 @@
 - [x] 各机器人独立记录 SwanLab 训练指标与完整动作评测。
 - [x] Policy / world model ONNX 导出与 WebGPU demo 集成；MuJoCo 物理使用 WASM。
 - [x] 每 10k iterations 保存配套 policy + world model 权重，包含归一化状态。
-- [ ] 发布 G1 / H2 / A3 完整 **LaFAN 100k** demo checkpoint。
-- [ ] 发布对应 checkpoint 的 train40 / val37 指标与 rollout 视频。
+- [x] 发布 LaFAN ONNX 预览：G1 60k policy / 55.5k world、H2 30k、A3 100k。
+- [x] 公布 G1/H2 train40 / val37 指标；A3 精确 100k 完整评测待补。
 - [ ] **BONES-SEEDs checkpoint**：正在准备重定向流程，后续训练并发布。
 - [ ] **GRAIL checkpoint**：正在处理动作与场景，后续开展包含场景的训练并发布。
 
@@ -36,11 +36,26 @@
 ONNX 每个机器人使用 16 组人工生成的输入验证，只说明这些输入下的数值一致性，
 不代表运动质量或完整 world model 的一致性。详见[测量说明](docs/performance.md)。
 
-**100k 动作跟踪指标待发布。** 每个机器人分别报告 train40 / val37 的完整动作归一化回报
-与失败动作数。归一化回报为 `sum(reward) / (0.1 × (frames − 1))`，各动作等权平均；
-提前终止后的剩余帧按零回报计算，触发提前终止即计为失败动作。
-训练期间的单步平均回报是另一项指标。当前 40 段名单尚未确认与论文作者完全一致，
-详见[评测范围](docs/reproduction_scope.md)。
+## 预训练模型预览
+
+[下载预览版](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/demo-preview-20261024)
+· [选型、评测与限制](docs/preview-release.md)
+
+| 机器人 | Policy / world iterations | train40 回报 · 失败 | val37 回报 · 失败 |
+| --- | --- | --- | --- |
+| G1 | **60k / 55.5k**（混合轮次） | 0.7922 · 3/40 | 0.2650 · 32/37 |
+| H2 | **30k / 30k** | 0.6526 · 6/40 | 0.2600 · 30/37 |
+| A3 | **100k / 100k** | 待补 | 待补 |
+
+G1/H2 使用较早 checkpoint，是因为后期完整动作评测退化：G1 100k 在 train40
+失败 40/40，H2 45k 失败 37/40。根因仍在调查，不能归因于 ONNX 转换。
+H2 使用修正骨盆惯量后重新训练的版本；G1 world 实际为 55.5k，未改标为 60k。
+
+回报为各动作 `sum(reward)/(0.1*(frames-1))` 的等权平均，提前终止后计零回报；
+不是训练单步回报，也不代表 world model 精度。train40 名单尚未与论文作者确认一致。
+
+模型包包含 FP32 ONNX、元数据及机器人资产。由于源数据再分发限制，**不包含动作文件**，
+运行网页前需要自行准备有相应许可的兼容动作。这是实验预览，不是可直接部署的控制器。
 
 ## 快速开始
 
@@ -58,13 +73,12 @@ bash scripts/bootstrap_umr.sh
 
 ## Checkpoint 与后续数据集
 
-下一次公开发布以 G1、H2、A3 的 **100k iterations** 为目标。完整 demo 包需要来自同一
-checkpoint 的 policy 和 world model ONNX，以及匹配的元数据与机器人资产。
-目前尚未发布完整预训练 demo 包，后续见 [GitHub Releases](https://github.com/OMEGA-i/SuperMimicKit/releases)。
+首个[公开预览版](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/demo-preview-20261024)
+使用上表中的 checkpoint。后续版本以已验证的质量为依据，不默认轮次越高越好。
 
 | 数据集 | 处理流程 | 发布计划 |
 | --- | --- | --- |
-| LaFAN | 原始数据 → SMPL-X → UMR → 50 Hz motions | G1 / H2 / A3 的 100k checkpoint |
+| LaFAN | 原始数据 → SMPL-X → UMR → 50 Hz motions | G1 60k/55.5k、H2 30k、A3 100k 预览 |
 | BONES-SEEDs | 120 Hz BVH → 内存中 SOMA 解析 / 50 Hz 重采样 → UMR → motions | G1 / H2 / A3 checkpoint，时间待定 |
 | GRAIL | 原始数据 → SMPL-X + scenes → UMR → 配套 motions 与 scenes | G1 / H2 / A3 checkpoint，时间待定 |
 
