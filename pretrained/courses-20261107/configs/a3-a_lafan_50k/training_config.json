@@ -1,0 +1,21 @@
+{
+  "robot_config": "robot_config.json",
+  "train": {
+    "motions": "datasets/lafan/motions/a3",
+    "manifest": "datasets/lafan/manifest.json",
+    "split": "train"
+  },
+  "val": {
+    "motions": "datasets/lafan/motions/a3",
+    "manifest": "datasets/lafan/manifest.json",
+    "split": "val"
+  },
+  "test": {
+    "motions": "datasets/lafan/motions/a3",
+    "manifest": "datasets/lafan/manifest.json",
+    "split": "test"
+  },
+  "max_iters": 50000,
+  "save_interval_iters": 5000,
+  "eval_interval_iters": 5000
+}

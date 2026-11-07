@@ -1,0 +1,649 @@
+{
+  "robot": "sih2300",
+  "mujoco_multiccd": false,
+  "mujoco_nativeccd": false,
+  "mujoco_nconmax": 512,
+  "mujoco_njmax": 4096,
+  "asset_env": "SUPERMIMIC_SIH2300_MJCF",
+  "asset_format": "mjcf",
+  "tracked_bodies": [
+    "Hips",
+    "Spine1",
+    "Spine2",
+    "Chest",
+    "Neck1",
+    "Neck2",
+    "Head",
+    "RightShoulder",
+    "RightArm",
+    "RightForeArm",
+    "RightHand",
+    "LeftShoulder",
+    "LeftArm",
+    "LeftForeArm",
+    "LeftHand",
+    "RightLeg",
+    "RightShin",
+    "RightFoot",
+    "RightToeBase",
+    "LeftLeg",
+    "LeftShin",
+    "LeftFoot",
+    "LeftToeBase"
+  ],
+  "default_pose": {},
+  "actuators": [
+    {
+      "pattern": "Spine1_x",
+      "stiffness": 400.0,
+      "damping": 77.5920462457758,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Spine1_y",
+      "stiffness": 400.0,
+      "damping": 94.88311287760487,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Spine1_z",
+      "stiffness": 400.0,
+      "damping": 56.024404698035795,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Spine2_x",
+      "stiffness": 400.0,
+      "damping": 65.59676581457494,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Spine2_y",
+      "stiffness": 400.0,
+      "damping": 85.35974223507782,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Spine2_z",
+      "stiffness": 400.0,
+      "damping": 55.996239796184355,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Chest_x",
+      "stiffness": 400.0,
+      "damping": 53.515140097942805,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Chest_y",
+      "stiffness": 400.0,
+      "damping": 76.44510499244745,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Chest_z",
+      "stiffness": 400.0,
+      "damping": 55.986063078309535,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Neck1_x",
+      "stiffness": 165.99563106472155,
+      "damping": 13.209512607804507,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Neck1_y",
+      "stiffness": 163.86450472910897,
+      "damping": 13.039922962471477,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Neck1_z",
+      "stiffness": 26.480420175458047,
+      "damping": 2.1072448830372514,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Neck2_x",
+      "stiffness": 81.3143239867164,
+      "damping": 6.470788303330894,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Neck2_y",
+      "stiffness": 81.29722382061765,
+      "damping": 6.469427515349739,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Neck2_z",
+      "stiffness": 24.08021682102771,
+      "damping": 1.9162427688955832,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Head_x",
+      "stiffness": 45.01566045754453,
+      "damping": 3.5822324391822913,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Head_y",
+      "stiffness": 43.82183310918867,
+      "damping": 3.487230677337729,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "Head_z",
+      "stiffness": 25.01905237258548,
+      "damping": 1.9909529282859957,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightShoulder_x",
+      "stiffness": 21.61400370664264,
+      "damping": 1.7199877649593622,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightShoulder_y",
+      "stiffness": 400.0,
+      "damping": 38.2183441377419,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightShoulder_z",
+      "stiffness": 400.0,
+      "damping": 38.4370583745793,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightArm_x",
+      "stiffness": 14.55333862887891,
+      "damping": 1.1581178906381524,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightArm_y",
+      "stiffness": 320.0452609060104,
+      "damping": 25.46839264316344,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightArm_z",
+      "stiffness": 320.0631571385252,
+      "damping": 25.469816780097165,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightForeArm_x",
+      "stiffness": 13.564658227763578,
+      "damping": 1.0794412041503612,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightForeArm_y",
+      "stiffness": 73.09842543919,
+      "damping": 5.816987870440719,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightForeArm_z",
+      "stiffness": 73.11632167170498,
+      "damping": 5.8184120073744605,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightHand_x",
+      "stiffness": 13.226176761423492,
+      "damping": 1.0525057048938522,
+      "armature": 0.02,
+      "effort": 70.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightHand_y",
+      "stiffness": 13.964904421063101,
+      "damping": 1.1112917842090277,
+      "armature": 0.02,
+      "effort": 70.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightHand_z",
+      "stiffness": 13.982800653578188,
+      "damping": 1.1127159211427768,
+      "armature": 0.02,
+      "effort": 70.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftShoulder_x",
+      "stiffness": 21.501019589887186,
+      "damping": 1.710996774623111,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftShoulder_y",
+      "stiffness": 400.0,
+      "damping": 38.129286786263904,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftShoulder_z",
+      "stiffness": 400.0,
+      "damping": 38.344777305104316,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftArm_x",
+      "stiffness": 14.55333862887891,
+      "damping": 1.1581178906381524,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftArm_y",
+      "stiffness": 319.8106404729217,
+      "damping": 25.44972214232523,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftArm_z",
+      "stiffness": 319.8285367054365,
+      "damping": 25.451146279258953,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftForeArm_x",
+      "stiffness": 13.564658227763566,
+      "damping": 1.0794412041503603,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftForeArm_y",
+      "stiffness": 72.97741901194745,
+      "damping": 5.807358484919948,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftForeArm_z",
+      "stiffness": 72.99531524446236,
+      "damping": 5.808782621853683,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftHand_x",
+      "stiffness": 13.226176761423503,
+      "damping": 1.052505704893853,
+      "armature": 0.02,
+      "effort": 70.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftHand_y",
+      "stiffness": 13.964904421063192,
+      "damping": 1.1112917842090348,
+      "armature": 0.02,
+      "effort": 70.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftHand_z",
+      "stiffness": 13.9828006535782,
+      "damping": 1.1127159211427777,
+      "armature": 0.02,
+      "effort": 70.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightLeg_x",
+      "stiffness": 500.0,
+      "damping": 68.92531282921885,
+      "armature": 0.02,
+      "effort": 250.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightLeg_y",
+      "stiffness": 500.0,
+      "damping": 68.8696946419827,
+      "armature": 0.02,
+      "effort": 250.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightLeg_z",
+      "stiffness": 23.883859134526553,
+      "damping": 1.900617120685209,
+      "armature": 0.02,
+      "effort": 250.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightShin_x",
+      "stiffness": 251.92651508652875,
+      "damping": 20.047675085968,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightShin_y",
+      "stiffness": 249.28596111605378,
+      "damping": 19.837546477516987,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightShin_z",
+      "stiffness": 18.523168644769708,
+      "damping": 1.4740269257699514,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightFoot_x",
+      "stiffness": 18.587578742257385,
+      "damping": 1.479152518470049,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightFoot_y",
+      "stiffness": 13.48833724172568,
+      "damping": 1.0733677730555717,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightFoot_z",
+      "stiffness": 18.666720849364015,
+      "damping": 1.4854504472464132,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightToeBase_x",
+      "stiffness": 12.8709673750963,
+      "damping": 1.0242390400605466,
+      "armature": 0.02,
+      "effort": 50.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightToeBase_y",
+      "stiffness": 12.931460691297925,
+      "damping": 1.0290529452093014,
+      "armature": 0.02,
+      "effort": 50.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "RightToeBase_z",
+      "stiffness": 12.862319264518586,
+      "damping": 1.0235508452871223,
+      "armature": 0.02,
+      "effort": 50.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftLeg_x",
+      "stiffness": 500.0,
+      "damping": 68.8179973126722,
+      "armature": 0.02,
+      "effort": 250.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftLeg_y",
+      "stiffness": 500.0,
+      "damping": 68.7626843187201,
+      "armature": 0.02,
+      "effort": 250.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftLeg_z",
+      "stiffness": 23.86683316217363,
+      "damping": 1.8992622368547523,
+      "armature": 0.02,
+      "effort": 250.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftShin_x",
+      "stiffness": 252.10586568172215,
+      "damping": 20.06194735285375,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftShin_y",
+      "stiffness": 249.48438970392874,
+      "damping": 19.85333692282251,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftShin_z",
+      "stiffness": 18.504090652088298,
+      "damping": 1.4725087473501928,
+      "armature": 0.02,
+      "effort": 200.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftFoot_x",
+      "stiffness": 18.560803496583336,
+      "damping": 1.4770218121192864,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftFoot_y",
+      "stiffness": 13.486689320353209,
+      "damping": 1.0732366356394438,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftFoot_z",
+      "stiffness": 18.641593525062447,
+      "damping": 1.483450878311779,
+      "armature": 0.02,
+      "effort": 100.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftToeBase_x",
+      "stiffness": 12.870967375096258,
+      "damping": 1.0242390400605432,
+      "armature": 0.02,
+      "effort": 50.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftToeBase_y",
+      "stiffness": 12.931460691297902,
+      "damping": 1.0290529452092996,
+      "armature": 0.02,
+      "effort": 50.0,
+      "velocity": 20.0
+    },
+    {
+      "pattern": "LeftToeBase_z",
+      "stiffness": 12.862319264518586,
+      "damping": 1.0235508452871223,
+      "armature": 0.02,
+      "effort": 50.0,
+      "velocity": 20.0
+    }
+  ],
+  "torso_body": "Chest",
+  "isaaclab_joint_aliases": {
+    "Spine1_x": "Spine1_x:0",
+    "Spine1_y": "Spine1_x:1",
+    "Spine1_z": "Spine1_x:2",
+    "Spine2_x": "Spine2_x:0",
+    "Spine2_y": "Spine2_x:1",
+    "Spine2_z": "Spine2_x:2",
+    "Chest_x": "Chest_x:0",
+    "Chest_y": "Chest_x:1",
+    "Chest_z": "Chest_x:2",
+    "Neck1_x": "Neck1_x:0",
+    "Neck1_y": "Neck1_x:1",
+    "Neck1_z": "Neck1_x:2",
+    "Neck2_x": "Neck2_x:0",
+    "Neck2_y": "Neck2_x:1",
+    "Neck2_z": "Neck2_x:2",
+    "Head_x": "Head_x:0",
+    "Head_y": "Head_x:1",
+    "Head_z": "Head_x:2",
+    "RightShoulder_x": "RightShoulder_x:0",
+    "RightShoulder_y": "RightShoulder_x:1",
+    "RightShoulder_z": "RightShoulder_x:2",
+    "RightArm_x": "RightArm_x:0",
+    "RightArm_y": "RightArm_x:1",
+    "RightArm_z": "RightArm_x:2",
+    "RightForeArm_x": "RightForeArm_x:0",
+    "RightForeArm_y": "RightForeArm_x:1",
+    "RightForeArm_z": "RightForeArm_x:2",
+    "RightHand_x": "RightHand_x:0",
+    "RightHand_y": "RightHand_x:1",
+    "RightHand_z": "RightHand_x:2",
+    "LeftShoulder_x": "LeftShoulder_x:0",
+    "LeftShoulder_y": "LeftShoulder_x:1",
+    "LeftShoulder_z": "LeftShoulder_x:2",
+    "LeftArm_x": "LeftArm_x:0",
+    "LeftArm_y": "LeftArm_x:1",
+    "LeftArm_z": "LeftArm_x:2",
+    "LeftForeArm_x": "LeftForeArm_x:0",
+    "LeftForeArm_y": "LeftForeArm_x:1",
+    "LeftForeArm_z": "LeftForeArm_x:2",
+    "LeftHand_x": "LeftHand_x:0",
+    "LeftHand_y": "LeftHand_x:1",
+    "LeftHand_z": "LeftHand_x:2",
+    "RightLeg_x": "RightLeg_x:0",
+    "RightLeg_y": "RightLeg_x:1",
+    "RightLeg_z": "RightLeg_x:2",
+    "RightShin_x": "RightShin_x:0",
+    "RightShin_y": "RightShin_x:1",
+    "RightShin_z": "RightShin_x:2",
+    "RightFoot_x": "RightFoot_x:0",
+    "RightFoot_y": "RightFoot_x:1",
+    "RightFoot_z": "RightFoot_x:2",
+    "RightToeBase_x": "RightToeBase_x:0",
+    "RightToeBase_y": "RightToeBase_x:1",
+    "RightToeBase_z": "RightToeBase_x:2",
+    "LeftLeg_x": "LeftLeg_x:0",
+    "LeftLeg_y": "LeftLeg_x:1",
+    "LeftLeg_z": "LeftLeg_x:2",
+    "LeftShin_x": "LeftShin_x:0",
+    "LeftShin_y": "LeftShin_x:1",
+    "LeftShin_z": "LeftShin_x:2",
+    "LeftFoot_x": "LeftFoot_x:0",
+    "LeftFoot_y": "LeftFoot_x:1",
+    "LeftFoot_z": "LeftFoot_x:2",
+    "LeftToeBase_x": "LeftToeBase_x:0",
+    "LeftToeBase_y": "LeftToeBase_x:1",
+    "LeftToeBase_z": "LeftToeBase_x:2"
+  },
+  "control_source": {
+    "xml_sha256": "db4ca941415e45af61058a288cf25c4598066f0f91b65a174518dfb7883eff96",
+    "method": "qpos0 mass diagonal including XML armature; 4Hz critically damped; Kp capped at effort/0.5rad",
+    "velocity_limit": "20rad/s engineering baseline; XML has no motor velocity rating",
+    "status": "engineering baseline; no physical robot certification"
+  },
+  "embodiment_contract": {
+    "root_coordinate_frame": "x-forward-y-left-z-up-v1",
+    "world_frame": "bones-mujoco-zup-rx90-v2",
+    "packing_contract": "omegasih-unified-pose50-v2",
+    "xml_sha256": "db4ca941415e45af61058a288cf25c4598066f0f91b65a174518dfb7883eff96",
+    "yaml_sha256": "bad14044c077eb1032aaf2f73fb80ce5402530a703c132da6af7456483f22805",
+    "yaml_env": "SUPERMIMIC_SIH2300_YAML",
+    "source_commit": "4ab21198373010df84d88e9443f8df5040dd3ab4"
+  }
+}

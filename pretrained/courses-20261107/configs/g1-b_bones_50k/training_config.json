@@ -1,0 +1,21 @@
+{
+  "robot_config": "robot_config.json",
+  "train": {
+    "motions": "datasets/bones-seed/motions/g1",
+    "manifest": "datasets/bones-seed/manifest.json",
+    "split": "train"
+  },
+  "val": {
+    "motions": "datasets/bones-seed/motions/g1",
+    "manifest": "datasets/bones-seed/manifest.json",
+    "split": "val"
+  },
+  "test": {
+    "motions": "datasets/bones-seed/motions/g1",
+    "manifest": "datasets/bones-seed/manifest.json",
+    "split": "test"
+  },
+  "max_iters": 50000,
+  "save_interval_iters": 5000,
+  "eval_interval_iters": 5000
+}

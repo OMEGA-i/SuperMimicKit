@@ -1,0 +1,6 @@
+{
+  "source": "OmegaSIH",
+  "source_commit": "8d543da",
+  "xml_sha256": "db4ca941415e45af61058a288cf25c4598066f0f91b65a174518dfb7883eff96",
+  "purpose": "Exact XML required by schema-6 course checkpoints; 66 hinge DOFs"
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "robot": "a3",
+    "course": "a_lafan_50k",
+    "iteration": 15000,
+    "checkpoint_sha256": "46f1ba0fe477beeaad70e0c37e98fe7428c449374da0ec9fdd352697d121c6db",
+    "weights_sha256": "1967dbe98cc2c9516b221cfbed1a996746158261c4e704bd535960293e03a4e5",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "797f80caf29970a6d37fc7022f03dd1d78d0d5e8898b37a806e926b2528882e2",
+    "archive": "a3-a_lafan_50k.zip"
+  },
+  {
+    "robot": "a3",
+    "course": "b_bones_50k",
+    "iteration": 25000,
+    "checkpoint_sha256": "8be820ae856aa0af285ae83e1a3ae082fbc814bfe6c302d8a9f39e658b9b9a40",
+    "weights_sha256": "d66bbdef07884de1d8d27428ca56565ae89e20a952aec986f5a75bc15b92c110",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "797f80caf29970a6d37fc7022f03dd1d78d0d5e8898b37a806e926b2528882e2",
+    "archive": "a3-b_bones_50k.zip"
+  },
+  {
+    "robot": "a3",
+    "course": "c_lafan25k_bones25k",
+    "iteration": 30000,
+    "checkpoint_sha256": "fd67a0add721dbcc346ed9cd7b18660468eac49a073f9654f5b07baadb3b78d9",
+    "weights_sha256": "ca8321dd5a96943d35f934181f0243872bdcfac5706b1c91351850ac548452b4",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "797f80caf29970a6d37fc7022f03dd1d78d0d5e8898b37a806e926b2528882e2",
+    "archive": "a3-c_lafan25k_bones25k.zip"
+  },
+  {
+    "robot": "a3",
+    "course": "d_bones25k_lafan25k",
+    "iteration": 40000,
+    "checkpoint_sha256": "c5edf547ee564a40a425965f065624118a2b3687ff4e6a1e3e5c443747812389",
+    "weights_sha256": "da6f3d142a8e6a02b71028517912d9fbb0f5e42a9d537da7303cf9ef54954e56",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "797f80caf29970a6d37fc7022f03dd1d78d0d5e8898b37a806e926b2528882e2",
+    "archive": "a3-d_bones25k_lafan25k.zip"
+  },
+  {
+    "robot": "g1",
+    "course": "a_lafan_50k",
+    "iteration": 45000,
+    "checkpoint_sha256": "2d5f9c24a3fd8aed43be1b7f6413bc93d64cb07e9ab2db2f9e5b19e6b0708210",
+    "weights_sha256": "ec9176a35923b2d1d544a5b6cc44ae20da187d7020c72943e377b726be5eb927",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "afdcd26db3cb9c063d981e92c281771e67eecbc9d16306774e32dd282a3a6322",
+    "archive": "g1-a_lafan_50k.zip"
+  },
+  {
+    "robot": "g1",
+    "course": "b_bones_50k",
+    "iteration": 30000,
+    "checkpoint_sha256": "7b8b36f1e3b41ce1a4893800d6456bdde44e249e2d46f61055a9cc42fba1c436",
+    "weights_sha256": "4b9e5e3158d366f52830a1b1edd574816a315ac43730705afedfb9f9a7b3c40a",
+    "training_complete": false,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "afdcd26db3cb9c063d981e92c281771e67eecbc9d16306774e32dd282a3a6322",
+    "archive": "g1-b_bones_50k.zip"
+  },
+  {
+    "robot": "g1",
+    "course": "c_lafan25k_bones25k",
+    "iteration": 45000,
+    "checkpoint_sha256": "0cc0add882481c9e96f22f2b7227303185c256d311da16321fca95f9aa1d6cbe",
+    "weights_sha256": "ff8a8de0007f8345f1c79a46f3fb2ec025aa9576ea384f794c4db37320e6267d",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "afdcd26db3cb9c063d981e92c281771e67eecbc9d16306774e32dd282a3a6322",
+    "archive": "g1-c_lafan25k_bones25k.zip"
+  },
+  {
+    "robot": "g1",
+    "course": "d_bones25k_lafan25k",
+    "iteration": 50000,
+    "checkpoint_sha256": "f72031da2ab73e3021cd8ca3fa57ccd0e3cdddfa2a049568e2bb17070eebd295",
+    "weights_sha256": "c7d40c4f32b29d82bb4759a1020cb2d53bfe29d7bbc5b8718f2ba2c2fa41af42",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "afdcd26db3cb9c063d981e92c281771e67eecbc9d16306774e32dd282a3a6322",
+    "archive": "g1-d_bones25k_lafan25k.zip"
+  },
+  {
+    "robot": "h2",
+    "course": "a_lafan_50k",
+    "iteration": 20000,
+    "checkpoint_sha256": "a859597298128abfc2af3cf198e892a7edccd194283eecb6faec18b4aef2edb7",
+    "weights_sha256": "eb39340063111612a20be90007341cf0971be87ecb2a6c13bb5557d4676ef153",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "4f8e5fc93923157a3f5ba86c40f34b2def5239a79455677f68ae965402cdfd21",
+    "archive": "h2-a_lafan_50k.zip"
+  },
+  {
+    "robot": "h2",
+    "course": "b_bones_50k",
+    "iteration": 40000,
+    "checkpoint_sha256": "b5c91922fbe5a5982495a0807b2fb7c45210c9b899ec92cc7ced336b91834f12",
+    "weights_sha256": "bd3683846e01b185f3da0d6ce2ba9b05651efe85b40203089021d36f01152704",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "4f8e5fc93923157a3f5ba86c40f34b2def5239a79455677f68ae965402cdfd21",
+    "archive": "h2-b_bones_50k.zip"
+  },
+  {
+    "robot": "h2",
+    "course": "c_lafan25k_bones25k",
+    "iteration": 35000,
+    "checkpoint_sha256": "0053b31a4ebce2ba3bd472c6f4a3555016773729f3eb605f5512acb4c7213b04",
+    "weights_sha256": "499e314fdaf1f94ec8285f662d060789b45e0d87bf973867b473d235c50eacec",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "4f8e5fc93923157a3f5ba86c40f34b2def5239a79455677f68ae965402cdfd21",
+    "archive": "h2-c_lafan25k_bones25k.zip"
+  },
+  {
+    "robot": "h2",
+    "course": "d_bones25k_lafan25k",
+    "iteration": 50000,
+    "checkpoint_sha256": "a6101d62a3798b98ab955ef14b1f1e1dad5fe856591a6c3f893c4b7da5187407",
+    "weights_sha256": "e519a5b261801bc2cbf12f6c1aab26a22cda66510d09987b94affed7cbff1e05",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "4f8e5fc93923157a3f5ba86c40f34b2def5239a79455677f68ae965402cdfd21",
+    "archive": "h2-d_bones25k_lafan25k.zip"
+  },
+  {
+    "robot": "sih2300",
+    "course": "a_lafan_50k",
+    "iteration": 20000,
+    "checkpoint_sha256": "7de00d07ef9784d19a3d8f4df43881f51050bcc2dd43f8356399ceb3d7d7cdc9",
+    "weights_sha256": "9ec9b4d7eadd7ffee48dd361eb55a052925f6fc55d4fe92ed0c584002bb6916f",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "db4ca941415e45af61058a288cf25c4598066f0f91b65a174518dfb7883eff96",
+    "archive": "sih2300-a_lafan_50k.zip"
+  },
+  {
+    "robot": "sih2300",
+    "course": "b_bones_50k",
+    "iteration": 15000,
+    "checkpoint_sha256": "d278fb0653bdfc99433db064b02601e0135947813fc4560d1a576a5173717c73",
+    "weights_sha256": "143f64f471e7b712bdcd6391b206fa4f9ee6e9cef14196c7aabd9c9c2e8b9a8d",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "db4ca941415e45af61058a288cf25c4598066f0f91b65a174518dfb7883eff96",
+    "archive": "sih2300-b_bones_50k.zip"
+  },
+  {
+    "robot": "sih2300",
+    "course": "c_lafan25k_bones25k",
+    "iteration": 35000,
+    "checkpoint_sha256": "ffa2935359fd122e42211fe4bdb2692cb328f9638082088731f6d50b54c98b4d",
+    "weights_sha256": "16ad02efed0693e6fc920599b610c27c7ac527ee681f3c508461669c793ec840",
+    "training_complete": true,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "db4ca941415e45af61058a288cf25c4598066f0f91b65a174518dfb7883eff96",
+    "archive": "sih2300-c_lafan25k_bones25k.zip"
+  },
+  {
+    "robot": "sih2300",
+    "course": "d_bones25k_lafan25k",
+    "iteration": 35000,
+    "checkpoint_sha256": "cc722bb06d8f912b78a146a1f0ff13b56239ef9c18a7d3ea34e060add6c8a124",
+    "weights_sha256": "6a11f7c9169024d318bde00b4cdf61e0386ba44032d253b9c79381f65fc56977",
+    "training_complete": false,
+    "selection": "destination validation mean; never test",
+    "asset_sha256": "db4ca941415e45af61058a288cf25c4598066f0f91b65a174518dfb7883eff96",
+    "archive": "sih2300-d_bones25k_lafan25k.zip"
+  }
+]

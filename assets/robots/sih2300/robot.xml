@@ -1,0 +1,255 @@
+<mujoco model="sih2300">
+  
+  <custom>
+    <text name="name" data="sih2300" />
+    <text name="alias" data="Baseline_Nominal" />
+    <text name="desc" data="Nominal SOMA23 humanoid baseline (all parameter ratios = 1.0)" />
+    <text name="description" data="Nominal SOMA23 humanoid baseline (all parameter ratios = 1.0)" />
+    <text name="collision_policy" data="soma-upper-assembly-v1" />
+    <text name="root_coordinate_frame" data="x-forward-y-left-z-up-v1" />
+  </custom>
+  <compiler coordinate="local" />
+  <default>
+    <joint damping="0.0" armature="0.01" stiffness="0.0" limited="true" />
+    <geom conaffinity="1" condim="3" contype="7" margin="0.001" rgba="0.8 0.6 .4 1" />
+  </default>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1=".4 .5 .6" rgb2="0 0 0" width="100" height="100" />
+    <texture builtin="flat" height="1278" mark="cross" markrgb="1 1 1" name="texgeom" random="0.01" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" type="cube" width="127" />
+    <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100" />
+    <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane" />
+    <material name="geom" texture="texgeom" texuniform="true" />
+  </asset>
+  <worldbody>
+    <light cutoff="100" diffuse="1 1 1" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1" />
+    <body name="Hips" pos="0 0 0">
+      <freejoint name="Hips" />
+      <geom type="sphere" size="0.08" pos="0.029999999999999999 0 0" density="1000.0" material="geom" quat="0.70710678118654757 0 0 0.70710678118654757" />
+      <body name="Spine1" pos="-0.00050000000000000001 0 0.050000000000000003" quat="0.70710678118654757 0 0 0.70710678118654757">
+        <joint name="Spine1_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-27.426488884342991 88.551443607586478" limited="true" />
+        <joint name="Spine1_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-35.985254737313511 36.0943553859682" limited="true" />
+        <joint name="Spine1_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-40.473812780573454 40.606510002931934" limited="true" />
+        <geom type="sphere" size="0.06" pos="0 -0.03 0.05" density="1000.0" material="geom" />
+        <body name="Spine2" pos="0 0.0003 0.0713">
+          <joint name="Spine2_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-31.151317424057577 30.335120782890073" limited="true" />
+          <joint name="Spine2_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-22.177399110854086 23.131503813865052" limited="true" />
+          <joint name="Spine2_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-33.028033860260678 32.885040251758262" limited="true" />
+          <geom type="sphere" size="0.07" pos="0 -0.04 0.06" density="1000.0" material="geom" />
+          <body name="Chest" pos="0 0.0082 0.0755">
+            <joint name="Chest_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-29.316911407304293 64.347941399916081" limited="true" />
+            <joint name="Chest_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-52.550942689101987 52.348865632128756" limited="true" />
+            <joint name="Chest_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="800.0" damping="80.0" armature="0.02" range="-35.355351358111541 31.306658929206826" limited="true" />
+            <geom type="sphere" size="0.11" pos="0 -0.04 0.12" density="1000.0" material="geom" />
+            <body name="Neck1" pos="-0.0018 0.0055 0.2631">
+              <joint name="Neck1_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-85.247029023881495 75.702974796039996" limited="true" />
+              <joint name="Neck1_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-72.359524703322535 70.406763853307211" limited="true" />
+              <joint name="Neck1_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-38.167627898854789 46.880115586527737" limited="true" />
+              <geom type="capsule" size="0.04" contype="1" conaffinity="1" fromto="0 -0.03 0 0 -0.03 0.07" density="1000.0" material="geom" />
+              <body name="Neck2" pos="0 -0.023 0.0771">
+                <joint name="Neck2_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-14.368852326608131 15.823037719737457" limited="true" />
+                <joint name="Neck2_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-25.856878926647433 27.000864561056378" limited="true" />
+                <joint name="Neck2_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-69.901618019050275 69.967382684472028" limited="true" />
+                <geom type="capsule" size="0.04" contype="1" conaffinity="1" fromto="0 0 0 0 -0.01 0.05" density="1000.0" material="geom" />
+                <body name="Head" pos="0 -0.0195 0.0613">
+                  <joint name="Head_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-124.94517239625569 97.432556065701036" limited="true" />
+                  <joint name="Head_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-57.351122052841674 56.850158511576218" limited="true" />
+                  <joint name="Head_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-120.4240654540643 120.54009545891469" limited="true" />
+                  <geom type="box" size="0.075 0.075 0.105" pos="0 0.02 0.07" quat="1 0 0 0" density="1000.0" material="geom" />
+                </body>
+              </body>
+            </body>
+            <body name="RightShoulder" pos="-0.0138 -0.0521 0.2318">
+              <joint name="RightShoulder_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-151.44890179689455 141.92878017138884" limited="true" />
+              <joint name="RightShoulder_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-87.745861145668883 93.944002532055066" limited="true" />
+              <joint name="RightShoulder_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-40.767572686226032 137.25039155961025" limited="true" />
+              <geom type="capsule" size="0.045" contype="1" conaffinity="1" fromto="-0.045 0.03 0 -0.11 0.03 0" density="1000.0" material="geom" />
+              <body name="RightArm" pos="-0.1504 0.0555 0">
+                <joint name="RightArm_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-189.99959156119456 189.99995682399219" limited="true" />
+                <joint name="RightArm_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-99.974102420553365 96.576151535492002" limited="true" />
+                <joint name="RightArm_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-189.99938329329669 189.99887252507915" limited="true" />
+                <geom type="capsule" size="0.045" contype="1" conaffinity="1" fromto="-0.045 0 0 -0.24 0 0" density="1000.0" material="geom" />
+                <body name="RightForeArm" pos="-0.2874 0 0">
+                  <joint name="RightForeArm_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="300.0" damping="30.0" armature="0.02" range="-10.000142976738649 10.000398934564362" limited="true" />
+                  <joint name="RightForeArm_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="300.0" damping="80.0" armature="0.02" range="-10.000265285137317 10.000834673340846" limited="true" />
+                  <joint name="RightForeArm_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="300.0" damping="30.0" armature="0.02" range="-9.9998308450959374 189.25054815667607" limited="true" />
+                  <geom type="capsule" size="0.035" contype="1" conaffinity="1" fromto="-0.04 0 0 -0.23 0 0" density="1000.0" material="geom" />
+                  <body name="RightHand" pos="-0.2713 0 0">
+                    <joint name="RightHand_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-180 180" limited="true" />
+                    <joint name="RightHand_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-180 180" limited="true" />
+                    <joint name="RightHand_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-180 180" limited="true" />
+                    <geom type="capsule" size="0.05" contype="1" conaffinity="1" fromto="-0.02 0 0 -0.05 -0.011 -0.008" density="1000.0" material="geom" />
+                  </body>
+                </body>
+              </body>
+            </body>
+            <body name="LeftShoulder" pos="0.0162 -0.0511 0.2324">
+              <joint name="LeftShoulder_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-141.80307979333423 162.05377357690568" limited="true" />
+              <joint name="LeftShoulder_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-97.848389241534917 88.621867689824171" limited="true" />
+              <joint name="LeftShoulder_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-148.0557924552227 46.894523336993245" limited="true" />
+              <geom type="capsule" size="0.045" contype="1" conaffinity="1" fromto="0.045 0.03 0 0.11 0.03 0" density="1000.0" material="geom" />
+              <body name="LeftArm" pos="0.1492 0.055 0">
+                <joint name="LeftArm_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-189.99932208086 189.99927535247289" limited="true" />
+                <joint name="LeftArm_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-99.744076654129728 99.986945980808727" limited="true" />
+                <joint name="LeftArm_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="400.0" damping="40.0" armature="0.02" range="-189.99892483387922 189.99855762095615" limited="true" />
+                <geom type="capsule" size="0.045" contype="1" conaffinity="1" fromto="0.045 0 0 0.24 0 0" density="1000.0" material="geom" />
+                <body name="LeftForeArm" pos="0.2874 0 0">
+                  <joint name="LeftForeArm_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="300.0" damping="30.0" armature="0.02" range="-10.000442679213602 10.000522387432758" limited="true" />
+                  <joint name="LeftForeArm_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="300.0" damping="30.0" armature="0.02" range="-10.001483430429031 10.00047835341444" limited="true" />
+                  <joint name="LeftForeArm_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="300.0" damping="30.0" armature="0.02" range="-189.18817505620132 10.000352956499652" limited="true" />
+                  <geom type="capsule" size="0.035" contype="1" conaffinity="1" fromto="0.04 0 0 0.23 0 0" density="1000.0" material="geom" />
+                  <body name="LeftHand" pos="0.2709 0 0">
+                    <joint name="LeftHand_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-180 180" limited="true" />
+                    <joint name="LeftHand_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-180 180" limited="true" />
+                    <joint name="LeftHand_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="200.0" damping="20.0" armature="0.02" range="-180 180" limited="true" />
+                    <geom type="capsule" size="0.05" contype="1" conaffinity="1" fromto="0.02 0 0 0.05 -0.011 -0.008" density="1000.0" material="geom" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="RightLeg" pos="0.026200000000000001 -0.10050000000000001 -0.083000000000000004" quat="0.70710678118654757 0 0 0.70710678118654757">
+        <joint name="RightLeg_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-150.23449737458739 62.494699023154361" limited="true" />
+        <joint name="RightLeg_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-50.847092862542311 89.890642273507666" limited="true" />
+        <joint name="RightLeg_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-93.334619819952891 110.91156812926474" limited="true" />
+        <geom type="capsule" size="0.06" contype="1" conaffinity="1" fromto="0 0 0 0 0 -0.37" density="1000.0" material="geom" />
+        <body name="RightShin" pos="0 0.0081 -0.4336">
+          <joint name="RightShin_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-8.1184675088339766 184.48280949098353" limited="true" />
+          <joint name="RightShin_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-9.9999678145362338 10.00067040037591" limited="true" />
+          <joint name="RightShin_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-10.000356154000837 10.000400006369841" limited="true" />
+          <geom type="capsule" size="0.05" contype="1" conaffinity="1" fromto="0 0 -0.05 0 0 -0.37" density="1000.0" material="geom" />
+          <body name="RightFoot" pos="0 0.0348 -0.4212">
+            <joint name="RightFoot_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="100.0" damping="20.0" armature="0.02" range="-188.54002507221549 188.34476014679217" limited="true" />
+            <joint name="RightFoot_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="100.0" damping="20.0" armature="0.02" range="-93.958187219161971 87.272747968612563" limited="true" />
+            <joint name="RightFoot_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="100.0" damping="20.0" armature="0.02" range="-181.80951389128865 189.05510907405352" limited="true" />
+            <geom type="box" size="0.075 0.045 0.028" pos="0 -0.045 -0.017" quat="0.7071 0.0 0.0 0.7071" density="1000.0" material="geom" />
+            <body name="RightToeBase" pos="0 -0.1328 -0.0508">
+              <joint name="RightToeBase_x" type="hinge" pos="0 0 0" axis="1.0000 0.0000 0.0000" stiffness="60.0" damping="12.0" armature="0.02" range="-186.50884637115698 137.88623154714423" limited="true" />
+              <joint name="RightToeBase_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="60.0" damping="12.0" armature="0.02" range="-10.650665341578208 11.496179699842575" limited="true" />
+              <joint name="RightToeBase_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="60.0" damping="12.0" armature="0.02" range="-10.462483242121984 11.66551423998974" limited="true" />
+              <geom type="box" size="0.05 0.032 0.0215" pos="0 -0.012 0.027" quat="1 0 0 0" density="1000.0" material="geom" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="LeftLeg" pos="0.025999999999999999 0.1004 -0.0843" quat="0.70710678118654757 0 0 0.70710678118654757">
+        <joint name="LeftLeg_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-62.45295223144781 150.56162503149389" limited="true" />
+        <joint name="LeftLeg_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-89.687940347748594 51.012119641837053" limited="true" />
+        <joint name="LeftLeg_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-108.2538906074289 102.03535284548082" limited="true" />
+        <geom type="capsule" size="0.06" contype="1" conaffinity="1" fromto="0 0 0 0 0 -0.37" density="1000.0" material="geom" />
+        <body name="LeftShin" pos="0 0.008 -0.4322">
+          <joint name="LeftShin_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-184.23745662090556 8.1148543791183751" limited="true" />
+          <joint name="LeftShin_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-10.000075410761784 10.000343962634295" limited="true" />
+          <joint name="LeftShin_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="500.0" damping="50.0" armature="0.02" range="-10.000407701316842 10.000157446076951" limited="true" />
+          <geom type="capsule" size="0.05" contype="1" conaffinity="1" fromto="0 0 -0.05 0 0 -0.37" density="1000.0" material="geom" />
+          <body name="LeftFoot" pos="0 0.0348 -0.4216">
+            <joint name="LeftFoot_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="100.0" damping="20.0" armature="0.02" range="-162.33844179062524 107.70023415250483" limited="true" />
+            <joint name="LeftFoot_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="100.0" damping="20.0" armature="0.02" range="-82.817048207597367 90.881165806430161" limited="true" />
+            <joint name="LeftFoot_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="100.0" damping="20.0" armature="0.02" range="-133.53562581074397 121.17348414494896" limited="true" />
+            <geom type="box" size="0.075 0.045 0.028" pos="0 -0.045 -0.017" quat="0.7071 0.0 0.0 0.7071" density="1000.0" material="geom" />
+            <body name="LeftToeBase" pos="0 -0.1323 -0.0506">
+              <joint name="LeftToeBase_x" type="hinge" pos="0 0 0" axis="-1.0000 0.0000 0.0000" stiffness="60.0" damping="12.0" armature="0.02" range="-137.78078320376395 186.61695079200769" limited="true" />
+              <joint name="LeftToeBase_y" type="hinge" pos="0 0 0" axis="0.0000 1.0000 0.0000" stiffness="60.0" damping="12.0" armature="0.02" range="-11.705960747749703 10.440738170930453" limited="true" />
+              <joint name="LeftToeBase_z" type="hinge" pos="0 0 0" axis="0.0000 0.0000 1.0000" stiffness="60.0" damping="12.0" armature="0.02" range="-12.675403494106501 9.4513824576432484" limited="true" />
+              <geom type="box" size="0.05 0.032 0.0215" pos="0 -0.012 0.027" quat="1 0 0 0" density="1000.0" material="geom" />
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="Spine1_x" joint="Spine1_x" gear="200" />
+    <motor name="Spine1_y" joint="Spine1_y" gear="200" />
+    <motor name="Spine1_z" joint="Spine1_z" gear="200" />
+    <motor name="Spine2_x" joint="Spine2_x" gear="200" />
+    <motor name="Spine2_y" joint="Spine2_y" gear="200" />
+    <motor name="Spine2_z" joint="Spine2_z" gear="200" />
+    <motor name="Chest_x" joint="Chest_x" gear="200" />
+    <motor name="Chest_y" joint="Chest_y" gear="200" />
+    <motor name="Chest_z" joint="Chest_z" gear="200" />
+    <motor name="Neck1_x" joint="Neck1_x" gear="100" />
+    <motor name="Neck1_y" joint="Neck1_y" gear="100" />
+    <motor name="Neck1_z" joint="Neck1_z" gear="100" />
+    <motor name="Neck2_x" joint="Neck2_x" gear="100" />
+    <motor name="Neck2_y" joint="Neck2_y" gear="100" />
+    <motor name="Neck2_z" joint="Neck2_z" gear="100" />
+    <motor name="Head_x" joint="Head_x" gear="100" />
+    <motor name="Head_y" joint="Head_y" gear="100" />
+    <motor name="Head_z" joint="Head_z" gear="100" />
+    <motor name="RightShoulder_x" joint="RightShoulder_x" gear="200" />
+    <motor name="RightShoulder_y" joint="RightShoulder_y" gear="200" />
+    <motor name="RightShoulder_z" joint="RightShoulder_z" gear="200" />
+    <motor name="RightArm_x" joint="RightArm_x" gear="200" />
+    <motor name="RightArm_y" joint="RightArm_y" gear="200" />
+    <motor name="RightArm_z" joint="RightArm_z" gear="200" />
+    <motor name="RightForeArm_x" joint="RightForeArm_x" gear="100" />
+    <motor name="RightForeArm_y" joint="RightForeArm_y" gear="100" />
+    <motor name="RightForeArm_z" joint="RightForeArm_z" gear="100" />
+    <motor name="RightHand_x" joint="RightHand_x" gear="70" />
+    <motor name="RightHand_y" joint="RightHand_y" gear="70" />
+    <motor name="RightHand_z" joint="RightHand_z" gear="70" />
+    <motor name="LeftShoulder_x" joint="LeftShoulder_x" gear="200" />
+    <motor name="LeftShoulder_y" joint="LeftShoulder_y" gear="200" />
+    <motor name="LeftShoulder_z" joint="LeftShoulder_z" gear="200" />
+    <motor name="LeftArm_x" joint="LeftArm_x" gear="200" />
+    <motor name="LeftArm_y" joint="LeftArm_y" gear="200" />
+    <motor name="LeftArm_z" joint="LeftArm_z" gear="200" />
+    <motor name="LeftForeArm_x" joint="LeftForeArm_x" gear="100" />
+    <motor name="LeftForeArm_y" joint="LeftForeArm_y" gear="100" />
+    <motor name="LeftForeArm_z" joint="LeftForeArm_z" gear="100" />
+    <motor name="LeftHand_x" joint="LeftHand_x" gear="70" />
+    <motor name="LeftHand_y" joint="LeftHand_y" gear="70" />
+    <motor name="LeftHand_z" joint="LeftHand_z" gear="70" />
+    <motor name="RightLeg_x" joint="RightLeg_x" gear="250" />
+    <motor name="RightLeg_y" joint="RightLeg_y" gear="250" />
+    <motor name="RightLeg_z" joint="RightLeg_z" gear="250" />
+    <motor name="RightShin_x" joint="RightShin_x" gear="200" />
+    <motor name="RightShin_y" joint="RightShin_y" gear="200" />
+    <motor name="RightShin_z" joint="RightShin_z" gear="200" />
+    <motor name="RightFoot_x" joint="RightFoot_x" gear="100" />
+    <motor name="RightFoot_y" joint="RightFoot_y" gear="100" />
+    <motor name="RightFoot_z" joint="RightFoot_z" gear="100" />
+    <motor name="RightToeBase_x" joint="RightToeBase_x" gear="50" />
+    <motor name="RightToeBase_y" joint="RightToeBase_y" gear="50" />
+    <motor name="RightToeBase_z" joint="RightToeBase_z" gear="50" />
+    <motor name="LeftLeg_x" joint="LeftLeg_x" gear="250" />
+    <motor name="LeftLeg_y" joint="LeftLeg_y" gear="250" />
+    <motor name="LeftLeg_z" joint="LeftLeg_z" gear="250" />
+    <motor name="LeftShin_x" joint="LeftShin_x" gear="200" />
+    <motor name="LeftShin_y" joint="LeftShin_y" gear="200" />
+    <motor name="LeftShin_z" joint="LeftShin_z" gear="200" />
+    <motor name="LeftFoot_x" joint="LeftFoot_x" gear="100" />
+    <motor name="LeftFoot_y" joint="LeftFoot_y" gear="100" />
+    <motor name="LeftFoot_z" joint="LeftFoot_z" gear="100" />
+    <motor name="LeftToeBase_x" joint="LeftToeBase_x" gear="50" />
+    <motor name="LeftToeBase_y" joint="LeftToeBase_y" gear="50" />
+    <motor name="LeftToeBase_z" joint="LeftToeBase_z" gear="50" />
+  </actuator>
+  <contact>
+    <exclude body1="Hips" body2="Spine2" />
+    <exclude body1="Spine1" body2="Chest" />
+    <exclude body1="Spine2" body2="Neck1" />
+    <exclude body1="Chest" body2="Neck2" />
+    <exclude body1="Neck1" body2="Head" />
+    <exclude body1="Spine1" body2="Neck1" />
+    <exclude body1="Spine2" body2="Neck2" />
+    <exclude body1="Chest" body2="Head" />
+    <exclude body1="RightArm" body2="Chest" />
+    <exclude body1="LeftArm" body2="Chest" />
+    <exclude body1="RightArm" body2="Spine2" />
+    <exclude body1="LeftArm" body2="Spine2" />
+    <exclude body1="Head" body2="Neck2" />
+    <exclude body1="Head" body2="LeftShoulder" />
+    <exclude body1="Head" body2="RightShoulder" />
+    <exclude body1="Neck1" body2="Neck2" />
+    <exclude body1="Neck1" body2="LeftShoulder" />
+    <exclude body1="Neck1" body2="RightShoulder" />
+    <exclude body1="Neck2" body2="LeftShoulder" />
+    <exclude body1="Neck2" body2="RightShoulder" />
+    <exclude body1="LeftShoulder" body2="RightShoulder" />
+  </contact>
+  <sensor />
+  <size njmax="700" nconmax="700" />
+</mujoco>

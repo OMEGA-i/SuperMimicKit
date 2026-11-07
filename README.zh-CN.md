@@ -1,5 +1,12 @@
 # SuperMimicKit
 
+## Course 模型（2026-11-07）
+
+G1 / H2 / A3 / SIH2300 的 a/b/c/d validation-best 权重，以及 LaFAN、BONES-SEED、GRAIL test 结果。
+
+[权重、结果与复现配置 / Weights, results and configurations](pretrained/courses-20261107/README.md)
+
+
 **面向 Unitree G1、Unitree H2 和 Agibot A3 的 SuperMimic 非官方复现。**
 
 [English](README.md) · 简体中文

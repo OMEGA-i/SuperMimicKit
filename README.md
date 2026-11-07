@@ -1,5 +1,12 @@
 # SuperMimicKit
 
+## Course models (2026-11-07)
+
+G1 / H2 / A3 / SIH2300 validation-best weights for a/b/c/d, with LaFAN, BONES-SEED and GRAIL test results.
+
+[权重、结果与复现配置 / Weights, results and configurations](pretrained/courses-20261107/README.md)
+
+
 **An unofficial SuperMimic reproduction for Unitree G1, Unitree H2 and Agibot A3.**
 
 English · [简体中文](README.zh-CN.md)

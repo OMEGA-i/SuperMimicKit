@@ -1,0 +1,163 @@
+{
+  "tracked_bodies": [
+    "pelvis_link",
+    "left_hip_yaw_Link",
+    "left_knee_Link",
+    "left_ankle_roll_Link",
+    "right_hip_yaw_Link",
+    "right_knee_Link",
+    "right_ankle_roll_Link",
+    "torso_Link",
+    "left_shoulder_yaw_Link",
+    "left_elbow_Link",
+    "left_wrist_yaw_Link",
+    "right_shoulder_yaw_Link",
+    "right_elbow_Link",
+    "right_wrist_yaw_Link"
+  ],
+  "robot": "agibot_a3",
+  "asset_env": "SUPERMIMIC_A3_MJCF",
+  "asset_format": "mjcf",
+  "default_pose": {},
+  "actuators": [
+    {
+      "pattern": ".*_hip_roll_joint",
+      "stiffness": 120,
+      "damping": 4.0,
+      "armature": 0.06646569890856839,
+      "effort": 220.0,
+      "velocity": 12.042771838760874
+    },
+    {
+      "pattern": ".*_hip_yaw_joint",
+      "stiffness": 80,
+      "damping": 3.0,
+      "armature": 0.06646569890856839,
+      "effort": 220.0,
+      "velocity": 12.042771838760874
+    },
+    {
+      "pattern": ".*_hip_pitch_joint",
+      "stiffness": 80,
+      "damping": 3.0,
+      "armature": 0.06646569890856839,
+      "effort": 220.0,
+      "velocity": 12.042771838760874
+    },
+    {
+      "pattern": ".*_knee_joint",
+      "stiffness": 250.0,
+      "damping": 8.0,
+      "armature": 0.12034039999999999,
+      "effort": 320.0,
+      "velocity": 14.660765716752367
+    },
+    {
+      "pattern": ".*_ankle_pitch_joint",
+      "stiffness": 50.0,
+      "damping": 2.0,
+      "armature": 0.06444060531016461,
+      "effort": 118.2,
+      "velocity": 10.8
+    },
+    {
+      "pattern": ".*_ankle_roll_joint",
+      "stiffness": 50.0,
+      "damping": 2.0,
+      "armature": 0.02012630058442085,
+      "effort": 54.75,
+      "velocity": 19.37
+    },
+    {
+      "pattern": "waist_yaw_joint",
+      "stiffness": 85,
+      "damping": 3.0,
+      "armature": 0.06646569890856839,
+      "effort": 220.0,
+      "velocity": 12.042771838760874
+    },
+    {
+      "pattern": "waist_roll_joint",
+      "stiffness": 50.0,
+      "damping": 2.0,
+      "armature": 0.014620876134502001,
+      "effort": 46.0,
+      "velocity": 22.7
+    },
+    {
+      "pattern": "waist_pitch_joint",
+      "stiffness": 50.0,
+      "damping": 2.0,
+      "armature": 0.08820859155526001,
+      "effort": 115,
+      "velocity": 9.24785
+    },
+    {
+      "pattern": ".*_shoulder_pitch_joint",
+      "stiffness": 40.0,
+      "damping": 3.0,
+      "armature": 0.012083368706200002,
+      "effort": 60.0,
+      "velocity": 13.613568165555769
+    },
+    {
+      "pattern": ".*_shoulder_roll_joint",
+      "stiffness": 40.0,
+      "damping": 3.0,
+      "armature": 0.012083368706200002,
+      "effort": 60.0,
+      "velocity": 13.613568165555769
+    },
+    {
+      "pattern": ".*_shoulder_yaw_joint",
+      "stiffness": 30.0,
+      "damping": 2.0,
+      "armature": 0.0049673513029504,
+      "effort": 24.0,
+      "velocity": 15.707963267948966
+    },
+    {
+      "pattern": ".*_elbow_joint",
+      "stiffness": 30.0,
+      "damping": 2.0,
+      "armature": 0.0049673513029504,
+      "effort": 24.0,
+      "velocity": 15.707963267948966
+    },
+    {
+      "pattern": ".*_wrist_roll_joint",
+      "stiffness": 30.0,
+      "damping": 2.0,
+      "armature": 0.0049673513029504,
+      "effort": 24.0,
+      "velocity": 15.707963267948966
+    },
+    {
+      "pattern": ".*_wrist_pitch_joint",
+      "stiffness": 20.0,
+      "damping": 2.0,
+      "armature": 0.0008100893337749999,
+      "effort": 6.0,
+      "velocity": 12.775810124598491
+    },
+    {
+      "pattern": ".*_wrist_yaw_joint",
+      "stiffness": 20.0,
+      "damping": 2.0,
+      "armature": 0.0008100893337749999,
+      "effort": 6.0,
+      "velocity": 12.775810124598491
+    },
+    {
+      "pattern": "head_(pitch|yaw)_joint",
+      "stiffness": 10.0,
+      "damping": 1.0,
+      "armature": 0.0,
+      "effort": 6.0,
+      "velocity": 2.0
+    }
+  ],
+  "control_source": "https://github.com/AgibotTech/sonic_for_a3/blob/c9df753d31ef63c930b825b1b6767cabd37c1549/gear_sonic/envs/manager_env/robots/a3.py",
+  "status": "experimental PhysX rigid-foot adaptation; head joints have zero position range; head PD is a simulation placeholder",
+  "torso_body": "torso_Link"
+}
